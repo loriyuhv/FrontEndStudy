@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 1. 问
+        // console.log(num);   // num is not defined
+
+        // 2. 问
+        // console.log(num); // 输出: undefined
+        // var num = 10;
+        //相当于执行了以下代码
+        var num;
+        // console.log(num);
+        // num = 10;
+
+        // 3. 问
+        fn();
+        function fn() {
+            console.log(11);
+        }
+
+        //相当于：
+        function fn() {
+            console.log(11);
+        }
+        // fn();
+
+        // 4. 问
+        // fun();    //报错
+        var fun = function() {
+            console.log(22);
+        }
+        // 函数表达式 调用必须写在函数表达式的下面
+        // 相当于执行了
+        var fun;
+        // fun();
+        fun = function() {
+            console.log(22);
+        }
+
+        // 1. JavaScript解析器在运行JavaScript代码的时候分为两步，预解析和代码执行。
+        //      1）预解析js引擎会把js里面的所有的var还有function提升到当前作用域的最前面。
+        //      2）代码执行，按照代码书写的顺序从上往下执行
+        // 2. 预解析分为变量预解析（变量提升）和函数预解析（函数提升）
+        //      1）变量提升 就是把所有的变量声明提升到当前的作用域最前面，不提升赋值操作
+        //      2) 函数提升 就是把所有的函数声明提升到当前的作用域最前面，不调用函数
+
+        // 案例
+        f1();
+        console.log(c);
+        console.log(b);
+        console.log(a);
+        function f1() {
+            var a = b = c = 9;
+            console.log(a); // 输出9
+            console.log(b); // 输出9
+            console.log(c); // 输出9
+        }
+
+        // 以下代码
+        function f1() {
+            var a;
+            a = b = c = 9;
+            // var a = b = c = 9;
+            // 相当于 var a = 9; b = 9; c = 9; b和c直接赋值，没有var声明，当全局变量看。
+            // 集体声明：var a = 9, b = 9, c = 9;
+            console.log(a); // 输出9
+            console.log(b); // 输出9
+            console.log(c); // 输出9
+        }
+        f1();
+        console.log(c); // c是全局变量
+        console.log(b); // b是全局变量
+        console.log(a); // a是局部变量
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

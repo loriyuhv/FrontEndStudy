@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        * 两类：
+        *   简单数据类型：Number, String, Boolean, Undefined, Null;
+        *   复杂数据类型：object
+        * */
+
+        // 1. number 数字类型
+        var num = 10; // num数字型
+        // console.log(typeof num)
+        // console.log("num：", num)
+        /*进制
+        // 1. 八进制，0~7我们程序里面数字前面加0表示8进制
+        var num1 = 010;
+        console.log(num1);
+        // 2. 十六进制 数字的前面加0x表示十六进制
+        var num2 = 0xa;
+        console.log(num2);
+         */
+
+        // Infinity 代表无穷大
+        // -Infinity 代表无穷小
+        // NaN 非数值
+        // isNaN()这个方法用来判断非数字 并且返回一个值，如果是数字返回的是false如果不是数字返回true
+        // var name = "walker";
+        // console.log(isNaN(name));
+
+        //2. string 字符串类型
+
+        // 1) 检测获取字符串的长度 length
+        var str = "loriyuhv";
+        // console.log(str.length);
+        // 2) 字符串拼接，只要有字符串和其他类型相拼接，最终的结果是字符串类型。
+        var answer = "I am " + 18;
+        // console.log(answer);
+        // console.log(typeof answer)
+
+        //3. boolean 布尔类型
+
+        //注意：只能有两个值true和false
+        var flag = true; //flag 布尔型
+        // var value = flag + 1; //true 参与加法运算当1来看 false当0看
+        // console.log(value)         // 输出：2
+        // console.log(typeof value); // 输出：number
+
+        // 检测数据类型
+        // console.log(typeof flag);
+
+        //数据类型的转换
+
+        //将数字类型转换成字符串类型
+        var num = 1;
+        var value = num.toString();
+        // console.log(num.toString()); // 输出值是1
+        // console.log(typeof value);   // 输出值是：string
+        // console.log(typeof num);     // 输出值是：number 说明不会影响原先的数据类型
+
+        // 强制类型转换
+        // String(num);    //这个也一样
+        // console.log(typeof num); // 输出：number
+
+        // 将string类型转换成整数数值型
+        var number = "123.123";
+        // console.log(parseInt(number)); //输出：123 和上述一样
+        // console.log(typeof parseInt(number)); //输出：number
+
+        // 将string类型转换成浮点数值类型
+        var number2 = "3.1415926"
+        // console.log(parseFloat(number2));     //输出：3.1415926
+        // console.log(typeof parseFloat(number2)); //输出：number
+
+        // 利用算数运算 + - * / 隐式转换
+        value = "123" - 1;
+        // console.log(value); // 输出：122
+        // console.log(typeof value);  // 输出：number
+
+        value1 = "123" * "2";
+        // console.log(value1);
+        // console.log(typeof value1);
+
+        // 4. 数组
+
+        // 1) 创建数组
+        var arr = [1, 2, 3, 4, 5];
+        // 2） 利用new创建数组
+        var arr1 = new Array(); //创建了一个空的数组
+        var cars = new Array("car", "track", "bike")
+        // 3） 利用数组字面量创建数组[]
+        var arr2 = []; //创建了一个空的数组
+        // console.log(cars);
+        // console.log(arr);
+
+        // 数组新增元素
+        // 1. 第一种
+        var names = ["黄海平"];
+        var a = names.length;
+        names.length = 5; // 默认值为undefined
+        names[a+0] = "王师维";
+        names[a+1] = "李嘉竣";
+        // console.log(names);
+
+        // 2. 第二种
+        var colours = ['red', 'purple', 'pink', 'green'];
+        colours[4] = 'black';
+        // console.log(colours);
+        // console.log(colours[4]);
+        // for (var i=0; i<colours.length; i++) {
+        //     document.write(colours[i] + "<br>");
+        // }
+
+        // JavaScript 对象
+        // 对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义。属性由逗号分隔：
+        var student = {
+            "name": "黄海平",
+            "sex": "male",
+            "age": 18
+        }
+        // 对象属性有两种寻址方式：
+        // document.write("I am " + student.name + ", " + student['sex']);
+    </script>
+</head>
+<body>
+<h1>Hello，world！</h1>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 5 -->
+    <!--<link />
+    <script></script>
+    <style></style>-->
+
+  <script>
+    function  a1(){
+        document.getElementById("abc").style.backgroundColor="red";
+    }
+
+    function  a2(){
+        document.getElementById("abc").style.backgroundColor="#FFFFFF";
+    }
+
+    function a3(){
+      document.getElementById("abc").innerHTML="我想去远方。"
+    }
+
+  </script>
+</head>
+<body>
+  <!-- 15个标签
+      属性
+         - 标准属性|全局属性
+                - id
+                - class
+                - style
+                - title
+                - lang
+         - 自身属性
+         - 时间属性
+  -->
+  <!-- ondblclick：当双击鼠标时运行脚本 -->
+  <div id="abc"   onmouseover="a1()" onmouseout="a2()" ondblclick="a3()">123</div>
+
+
+
+</body>
+</html>

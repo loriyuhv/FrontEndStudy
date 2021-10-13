@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+      //函数使用分为两步，声明函数和调用函数
+      // 1. 声明函数
+      // function 函数名() {
+      //   //函数体
+      // }
+      function sayHi() {
+        console.log("Hello World!");
+      }
+      // 1） function 声明函数的关键字，全部小写
+      // 2）函数是做某件事情，函数名一般是动词
+      // 3）函数不调用自己不执行。
+      // 2. 调用函数
+      function sum() {
+          var sum = 0, i = 0;
+          for(; i <=100; i++) {
+              sum = sum + i;
+          }
+          document.getElementById("abc").innerHTML=sum;
+      }
+      sayHi();
+
+      function cook(aru) {
+        console.log(aru);
+        document.getElementById("abc").innerHTML = aru;
+      }
+      cook("酸辣土豆丝");
+    </script>
+</head>
+<body>
+<div id='abc' onmouseover="sum()" onclick="cook()">red</div>
+</body>
+</html>
