@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06form表单</title>
+</head>
+<body>
+<!--
+注意：name属性是给服务器看的！
+{"username": "loriyuhv", "password": "12345"}
+-->
+<form action="127.0.0.1:8090/index" method="get">
+    <!-- 文本输入框-->
+    <p>姓名：<label><input type="text" name="username"></label></p>
+
+    <!-- 密码输入框-->
+    <p>密码：<label><input type="password" name="password"></label></p>
+
+    <!-- 提交按钮-->
+    <p><label><input type="submit" value="press"></label></p>
+
+    <!-- 触发器(需要配合js使用.)-->
+    <p><label><input type="button" value="target"></label></p>
+
+    <!--复选框 多选框-->
+
+    <p><b>爱好</b></p>
+    <li>篮球<label><input type="checkbox" name="hobby" value="1"></label></li>
+    <li>足球<label><input type="checkbox" name="hobby" value="2"></label></li>
+    <li>羽毛球<label><input type="checkbox" name="hobby" value="3"></label></li>
+
+    <!--
+        单选框
+        注意：name属性是给服务器看的！
+    -->
+    <p>性别：男<label><input type="radio" name="sex"></label></p>
+    <p>性别：女<label><input type="radio" name="sex"></label></p>
+
+    <!--上传文件-->
+    <p><label><input type="file"></label></p>
+
+    <!--重置按钮-->
+    <p><label><input type="reset" value="重置"></label></p>
+</form>
+
+</body>
+</html>
