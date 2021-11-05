@@ -6,5 +6,22 @@
 </head>
 <body>
 <h1>Hello World</h1>
+<form action="/jerry/" method="post" enctype="multipart/form-data">
+    <p>用户名：<label><input type="text" name="username"></label></p>
+    <p>密码：<label><input type="password" name="password"></label></p>
+
+    <p><b>性别</b></p>
+    <li>男<label><input type="radio" name="sex" value="0"></label></li>
+    <li>女<label><input type="radio" name="sex" value="1"></label></li>
+
+    <p><b>爱好</b></p>
+    <li>篮球<label><input type="checkbox" name="hobby" value="basketball"></label></li>
+    <li>足球<label><input type="checkbox" name="hobby" value="football"></label></li>
+    <li>羽毛球<label><input type="checkbox" name="hobby" value="badminton"></label></li>
+
+    <p><label><input type="file" name="jerry"></label></p>
+
+    <p><label><input type="submit" value="发送"></label></p>
+</form>
 </body>
 </html>
