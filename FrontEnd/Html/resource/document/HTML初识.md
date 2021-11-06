@@ -77,7 +77,7 @@ meta标签的组成：meta标签共有两个属性，它们分别是**http-equiv
 <p id="paragraph2_01" style="color:mediumpurple;font-size:18px">
     <b>一 基本标签（块级标签和内联标签）</b>
 </p>
-```tex
+```
 <hn>：n的取值范围是1~6；从大到小，用来表示标题
 
 <p>: 段落标签. 包裹的内容被换行.并且也上下内容之间有一行空白.
@@ -555,6 +555,10 @@ colspan:  单元格横跨多少列（即合并单元格）
    
 
 
+
+**参考文章**
+
+[html介绍](https://www.cnblogs.com/yuanchenqi/articles/5976755.html)
 
 
 
