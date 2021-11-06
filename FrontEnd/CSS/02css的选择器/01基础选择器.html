@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01基础选择器</title>
+    <style>
+        /* !*通用选择器*! */
+        /* *{
+            font-size: 26px;
+        } */
+
+        /* 标签选择器*/
+        /* p {
+            background-color: yellow;
+            font-size: 24px;
+        }
+        span {
+            font-size: 20px;
+            color: purple;
+        }
+        div{
+            color: greenyellow;
+            font-size: 18px;
+        } */
+
+
+        /* #p1{
+            font-style:italic;
+            color:royalblue;
+        } */
+        
+        
+        /* class选择器 */
+        .introduce {
+            color: aquamarine;
+            font-size: 18px;
+        }
+
+        span.name {
+            color: mediumpurple;
+            font-size: 20px;
+        }
+
+        /*#outer .c2 .c1{
+            font-size:30px;
+        }*/
+        /*#p,#p1,.c6{
+            color:saddlebrown;
+        }
+
+        /*毗邻选择器*/
+        /* #outer+.t{color:red;} */
+    </style>
+</head>
+<body>
+    <!-- 通用选择器 -->
+    <!-- <p>Hello world.</p>
+    <span>Hello span.</span>
+    <div>Hello div.</div> -->
+
+    <!-- 标签选择器 -->
+    <!-- <p>Hello world.</p>
+    <span>Hello span.</span>
+    <div>Hello div.</div> -->
+
+    <!-- class 选择器 -->
+    <p class="introduce">
+        <span class="name">I am Jerry.</span><br>
+        <span class="nation">I am from China.</span><br>
+        <span class="mission">
+            <b>mission：</b>
+            <ul>
+                <li>runing</li>
+                <li>reading</li>
+                <li>trip</li>
+            </ul>
+        </span>   
+    </p>
+    <p class="introduce">
+        <span class="name">I am Tom.</span><br>
+        <span class="nation">I am from France.</span><br>
+        <span class="mission">
+            <b>mission：</b>
+            <ul>
+                <li>walking</li>
+                <li>reading</li>
+                <li>resting</li>
+            </ul>
+        </span>
+    </p>
+    
+
+    <!-- <div id="outer">Hello div
+        <span>Hello span</span>
+        <p id="p1">Hello p2</p>
+        <p class="c1">hello p3</p>
+
+        <div class="c2">
+            <p class="c1">Hello p4</p>
+        </div>
+    </div>
+
+    <p class="t">Hello p5</p>
+    <p id="t">hello p6</p>
+    <div class="c6">
+        你需要用一个拟人手法。
+    </div> -->
+
+</body>
+</html>
