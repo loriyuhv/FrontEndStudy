@@ -17,7 +17,7 @@ htyper text markup language  即**超文本标记语言**。
 
 **html文档树形结构图：**
 
-![html文档树形结构图](..\resource\document\data\html文档树形结构图.png)
+![html文档树形结构图](data/html文档树形结构图.png)
 ## 什么是标签
 - 是由一对**尖括号**包裹的单词构成 例如：``` <html>``` 所有标签中的单词不可能以数字开头。
 - 标签不区分**大小写**。```<html>``` 和``` <HTML>```。 推荐使用**小写**。
@@ -366,7 +366,7 @@ colspan:  单元格横跨多少列（即合并单元格）
 
 2. **表单元素**
 
-   <p style="color:mediumaquamarine"><b>&lt;input&gt;标签属性和对应值</b></p>
+   <p style="color:mediumaquamarine"><b>&lt;input&gt; 标签属性和对应值</b></p>
 
    - **type**
 
@@ -386,7 +386,7 @@ colspan:  单元格横跨多少列（即合并单元格）
 
      表单提交项的值.对于不同的输入类型，value 属性的用法也不同：
 
-     ```html
+     ```markdown
      type="button", "reset", "submit"	- 定义按钮上的显示文本
      type="text", "password", "hidden" 	- 定义输入字段的初始值
      type="checkbox", "radio", "image"	- 定义与输入关联的值
@@ -406,26 +406,74 @@ colspan:  单元格横跨多少列（即合并单元格）
 
      **上传文件注意两点**
 
-     1. 请求方式必须是post。
+     1: 请求方式必须是post。
 
-     2. enctype=“multipart/form-data"
+     2:  enctype=“multipart/form-data"
 
-        ```python
-        def index(request):
-            print request.POST
-            print request.GET
-            print request.FILES
-            for item in request.FILES:
-                fileObj = request.FILES.get(item)
-                f = open(fileObj.name, 'wb')
-                iter_file = fileObj.chunks()
-                for line in iter_file:
-                    f.write(line)
-                f.close()
-            return HttpResponse('ok')
-        ```
+     ```python
+     def index(request):
+         print request.POST
+         print request.GET
+         print request.FILES
+         for item in request.FILES:
+             fileObj = request.FILES.get(item)
+             f = open(fileObj.name, 'wb')
+             iter_file = fileObj.chunks()
+             for line in iter_file:
+                 f.write(line)
+             f.close()
+         return HttpResponse('ok')
+     ```
 
-   <p style="color:mediumaquamarine"><b>&lt;select&gt;下拉选项标签属性</b></p>
+   **coding**
+
+   ```html
+   <body>
+   <!--
+   注意：name属性是给服务器看的！
+   {"username": "loriyuhv", "password": "12345"}
+   -->
+   <form action="127.0.0.1:8090/index" method="get">
+       <!-- 文本输入框-->
+       <p>姓名：<label><input type="text" name="username"></label></p>
+   
+       <!-- 密码输入框-->
+       <p>密码：<label><input type="password" name="password"></label></p>
+   
+       <!-- 提交按钮-->
+       <p><label><input type="submit" value="press"></label></p>
+   
+       <!-- 触发器(需要配合js使用.)-->
+       <p><label><input type="button" value="target"></label></p>
+   
+       <!--复选框 多选框-->
+   
+       <p><b>爱好</b></p>
+       <li>篮球<label><input type="checkbox" name="hobby" value="1"></label></li>
+       <li>足球<label><input type="checkbox" name="hobby" value="2"></label></li>
+       <li>羽毛球<label><input type="checkbox" name="hobby" value="3"></label></li>
+   
+       <!--
+           单选框
+           注意：name属性是给服务器看的！
+       -->
+       <p>性别：男<label><input type="radio" name="sex"></label></p>
+       <p>性别：女<label><input type="radio" name="sex"></label></p>
+   
+       <!--上传文件-->
+       <p><label><input type="file"></label></p>
+   
+       <!--重置按钮-->
+       <p><label><input type="reset" value="重置"></label></p>
+   
+       <label for="name">姓名</label>
+       <input type="text" id="name">
+   </form>
+   
+   </body>
+   ```
+
+   <p style="color:mediumaquamarine"><b>&lt;select&gt; 下拉选项标签属性</b></p>
 
    ```html
    name:表单提交项的键.
@@ -438,30 +486,79 @@ colspan:  单元格横跨多少列（即合并单元格）
        value:表单提交项的值.   selected: selected下拉选默认被选中
    <optgroup>为每一项加上分组
    ```
+   
+   **coding**
+   
+   ```html
+       <label>
+           出生地：
+           <select name="city" multiple size="3">
+               <optgroup label="江西省">
+                   <option value="nanchang">南昌</option>
+                   <option value="jiujiang">九江</option>
+                   <option value="ganzhou">赣州</option>
+               </optgroup>
+   
+               <optgroup label="浙江省">
+                   <option value="hangzhou">杭州</option>
+                   <option value="ningbo">宁波</option>
+                   <option value="yiwu">义乌</option>
+               </optgroup>
+               <option value="beijing">北京</option>
+               <option value="changsha">长沙</option>
+           </select>
+   
+           <br/>
+           <p><textarea rows="10" cols="100">自我简介</textarea></p>
+       </label>
+   
+   ```
+   
+   <p style="color:mediumaquamarine"><b>&lt;textarea&gt; 文本域</b></p>
+   
+      ```markdown
+      name:    表单提交项的键.
+      
+      cols:    文本域默认有多少列
+      
+      rows:    文本域默认有多少行
+      ```
 
+   **coding**
+
+   ```html
+   <label>
+           <textarea rows="10" cols="100">自我简介</textarea>
+   </label>
+   ```
+   
+   <p style="color:mediumaquamarine"><b>&lt;label&gt;</b></p>
+
+   **coding**
+
+   ```html
+   <br>
+   <label for="name">姓名</label>
+   <input type="text" id="name">
+   ```
+
+   
+
+   **coding**
+
+   ```html
+   <fieldset>
+   	<legend>登录吧</legend>
+   	<label><input type="text"></label>
+   </fieldset>
+   ```
    
 
 
 
 
 
-
-
-
-
-```html
-常用格式
-<p style="color:mediumpurple"><b>&lt;select&gt;下拉选项标签属性</b></p>
-<p id="paragraph1_01" style="color:mediumpurple">
-    <b>content</b>
-</p>
-```
-
-
-
-
-
-
+<!-- <p style="color:mediumpurple"><b>&lt;select&gt;下拉选项标签属性</b></p> -->
 
 
 
