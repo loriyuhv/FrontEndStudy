@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>02组合选择器</title>
+    <meta charset="UTF-8">
+    <style>
+        .selector {
+            color: mediumslateblue;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        /* 多元素选择器 */
+        b, li {
+            color: aquamarine;
+            font-weight: bolder;
+        }
+        /* 后代元素选择器 */
+        li a{
+            color: chocolate;
+            font-size: bold;
+            font-size: 18px;
+        }
+
+        /* 子元素选择器 */
+        div > p {
+            font-size: 18px;
+            color: mediumvioletred;
+        }
+
+        /* 毗邻元素选择器 */
+        div + p {
+            color:midnightblue;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 多元素选择器 -->
+    <p class="selector">多元素选择器</p>
+    <b>mission：</b>
+    <ul>
+        <li>runing</li>
+        <li>reading</li>
+        <li>trip</li>
+    </ul>
+    <hr>
+    <!-- 后代元素选择器 -->
+    <p class="selector">后代元素选择器</p>
+    <b>Internet sites</b>
+    <ul>
+        <li><a href="www.baidu.com">baidu</a></li>
+        <li><a href="book.douban.com">douban</a></li>
+    </ul>
+    <hr>
+
+    <!-- 子元素选择器 -->
+    <div style="width: 800px;">
+        <h1>冬雨</h1>
+        <p>
+            冬雨是那么的缠绵，凄凉，她推开了科天的大门，预示着我们：冬天已经来到。
+            她的美丽感染了棵棵树木上的叶子，叶儿欲追寻她的足迹，随风飘落，在空中
+            不停的舞动，给人以静静的遐想和沉思。</p>
+        <p>
+            冬雨，没有夏雨那么热情奔放，更没有秋雨的冷酷，有的只是一丝悲伤与一腔
+            善感的情怀。雨还在细细地下着，显得那么孤单与悲凉。</p>
+    </div>
+    <hr>
+
+    <!-- 毗邻元素选择器 -->
+    <div style="width: 800px;">
+        <h1>论语</h1>
+        <p>学而时习之，不亦说乎？</p>
+        <div><p>学：学问</p></div>
+        <p>有朋自远方来，不亦乐乎？</p>
+        <p>人不知而不愠，不亦君子乎？</p>
+    </div>
+</body>
+</html>

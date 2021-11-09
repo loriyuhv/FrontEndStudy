@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04文本属性</title>
+    <style>
+        p{
+            font-size: 18px;    /* 字体大小 */
+            text-align: left;   /* 横向排列 */
+
+            /* 文本行高 通俗的讲，文字高度加上文字上下的空白区域的高度 50%:基于字体大小的百分比 */
+            line-height: 30px;  
+
+            text-indent: 2em;   /* 首行缩进 */
+            letter-spacing: 8px;    /* 字间距：用于中文 */
+            word-spacing: 30px; /* 字间距: 用于英文*/
+
+            /* lowercase: 小写字体 uppercase: 大写字母 capitalize: 单词首字母大写 */
+            text-transform: lowercase; 
+        }
+        .outer .item {
+            width: 300px;
+            height: 200px;
+            background-color: chartreuse;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>冬雨</h1>
+    <p>冬雨是那么的缠绵，凄凉，她推开了科天的大门，预示着我们：冬天已经来到。
+        I am Jerry.
+    </p>
+
+
+    <div class="outer">
+        <div class="item" style="vertical-align: top">ll</div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>

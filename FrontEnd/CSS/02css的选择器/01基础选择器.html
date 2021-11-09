@@ -5,14 +5,14 @@
     <title>01基础选择器</title>
     <style>
         /* !*通用选择器*! */
-        /* *{
-            font-size: 26px;
-        } */
+        *{
+            font-size: 18px;
+        }
 
         /* 标签选择器*/
-        /* p {
-            background-color: yellow;
-            font-size: 24px;
+        p {
+            
+            font-size: 22px;
         }
         span {
             font-size: 20px;
@@ -20,15 +20,8 @@
         }
         div{
             color: greenyellow;
-            font-size: 18px;
-        } */
-
-
-        /* #p1{
-            font-style:italic;
-            color:royalblue;
-        } */
-        
+            font-size: 24px;
+        }
         
         /* class选择器 */
         .introduce {
@@ -40,30 +33,39 @@
             color: mediumpurple;
             font-size: 20px;
         }
-
-        /*#outer .c2 .c1{
-            font-size:30px;
-        }*/
-        /*#p,#p1,.c6{
-            color:saddlebrown;
+        p.selector {
+            color: mediumslateblue;
+            font-size: 16px;
         }
 
-        /*毗邻选择器*/
-        /* #outer+.t{color:red;} */
+        /* Id选择器 */
+
+        #name {
+            color: aquamarine;
+            font-size: 18px;
+        }
+        p#introduction2 {
+            color: mediumpurple;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
     <!-- 通用选择器 -->
-    <!-- <p>Hello world.</p>
+    <p class="selector">通用选择器</p>
+    <p>Hello world.</p>
     <span>Hello span.</span>
-    <div>Hello div.</div> -->
+    <div>Hello div.</div>
+    <hr>
 
     <!-- 标签选择器 -->
-    <!-- <p>Hello world.</p>
+    <p>Hello world.</p>
     <span>Hello span.</span>
-    <div>Hello div.</div> -->
+    <div>Hello div.</div>
+    <hr>
 
     <!-- class 选择器 -->
+    <p class="selector">class 选择器</p>
     <p class="introduce">
         <span class="name">I am Jerry.</span><br>
         <span class="nation">I am from China.</span><br>
@@ -88,9 +90,21 @@
             </ul>
         </span>
     </p>
-    
+    <hr>
 
-    <!-- <div id="outer">Hello div
+    <!-- Id 选择器 -->
+    <p class="selector">Id 选择器</p>
+    <p id="introduction">
+        <span id="name">I am Jerry.</span><br>
+        <sapn id="nation">I am from China.</sapn><br>
+        <sapn class="document">My name is Jerry. I am from Jiangxi Province in China.</sapn>
+    </p>
+    <p id="introduction2">
+        <span>I am Tom.</span>
+        <sapn>I am from Germany.</sapn>
+    </p>
+
+    <div id="outer">Hello div
         <span>Hello span</span>
         <p id="p1">Hello p2</p>
         <p class="c1">hello p3</p>
@@ -99,12 +113,6 @@
             <p class="c1">Hello p4</p>
         </div>
     </div>
-
-    <p class="t">Hello p5</p>
-    <p id="t">hello p6</p>
-    <div class="c6">
-        你需要用一个拟人手法。
-    </div> -->
-
+    <hr>
 </body>
 </html>

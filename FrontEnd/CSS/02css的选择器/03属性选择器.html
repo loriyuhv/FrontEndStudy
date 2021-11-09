@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03属性选择器</title>
+    <style>
+        p[class]{
+            color: red;
+        }
+
+        p[class="name"] {
+            color: purple;
+        }
+        p[class~="sex"] {
+            color: aquamarine;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        p[class^="nu"] {
+            color: yellowgreen;
+            font-size: 16px;
+            font-weight: bolder;
+        }
+        p[class$="by"] {
+            color: gray;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        p[class*="ei"] {
+            color: burlywood;
+            font-weight: bold;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <p class="number">学号：20192222</p>
+        <p class="name">姓名：王二小</p>
+        <p class="  sex">性别：男</p>
+        <p class="nation">地区：江西</p>
+        <p class="hobby">爱好：阅读</p>
+        <p class="height">身高：150</p>
+    </div>
+    <hr>
+    <div>
+        <p class="number">学号：20197328</p>
+        <p class="name">姓名：张三</p>
+        <p class="  sex">性别：女</p>
+        <p class="area">地区：湖南</p>
+        <p class="hobby">爱好：跑步</p>
+        <p class="height">身高：190</p>
+    </div>
+</body>
+</html>

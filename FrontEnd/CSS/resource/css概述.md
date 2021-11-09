@@ -114,22 +114,223 @@ E: 标签选择器，匹配所有使用E标签的元素	p {color: green;}
 **coding**
 
 ```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01基础选择器</title>
+    <style>
+        /* !*通用选择器*! */
+        *{
+            font-size: 18px;
+        }
+
+        /* 标签选择器*/
+        p {
+            
+            font-size: 22px;
+        }
+        span {
+            font-size: 20px;
+            color: purple;
+        }
+        div{
+            color: greenyellow;
+            font-size: 24px;
+        }
+        
+        /* class选择器 */
+        .introduce {
+            color: aquamarine;
+            font-size: 18px;
+        }
+
+        span.name {
+            color: mediumpurple;
+            font-size: 20px;
+        }
+        p.selector {
+            color: mediumslateblue;
+            font-size: 16px;
+        }
+
+        /* Id选择器 */
+
+        #name {
+            color: aquamarine;
+            font-size: 18px;
+        }
+        p#introduction2 {
+            color: mediumpurple;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 通用选择器 -->
+    <p class="selector">通用选择器</p>
+    <p>Hello world.</p>
+    <span>Hello span.</span>
+    <div>Hello div.</div>
+    <hr>
+
+    <!-- 标签选择器 -->
+    <p>Hello world.</p>
+    <span>Hello span.</span>
+    <div>Hello div.</div>
+    <hr>
+
+    <!-- class 选择器 -->
+    <p class="selector">class 选择器</p>
+    <p class="introduce">
+        <span class="name">I am Jerry.</span><br>
+        <span class="nation">I am from China.</span><br>
+        <span class="mission">
+            <b>mission：</b>
+            <ul>
+                <li>runing</li>
+                <li>reading</li>
+                <li>trip</li>
+            </ul>
+        </span>   
+    </p>
+    <p class="introduce">
+        <span class="name">I am Tom.</span><br>
+        <span class="nation">I am from France.</span><br>
+        <span class="mission">
+            <b>mission：</b>
+            <ul>
+                <li>walking</li>
+                <li>reading</li>
+                <li>resting</li>
+            </ul>
+        </span>
+    </p>
+    <hr>
+
+    <!-- Id 选择器 -->
+    <p class="selector">Id 选择器</p>
+    <p id="introduction">
+        <span id="name">I am Jerry.</span><br>
+        <sapn id="nation">I am from China.</sapn><br>
+        <sapn class="document">My name is Jerry. I am from Jiangxi Province in China.</sapn>
+    </p>
+    <p id="introduction2">
+        <span>I am Tom.</span>
+        <sapn>I am from Germany.</sapn>
+    </p>
+
+    <div id="outer">Hello div
+        <span>Hello span</span>
+        <p id="p1">Hello p2</p>
+        <p class="c1">hello p3</p>
+
+        <div class="c2">
+            <p class="c1">Hello p4</p>
+        </div>
+    </div>
+    <hr>
+</body>
+</html>
+```
+
+### 2 组合选择器
+
+```
+E,F		多元素选择器，同时匹配所有E元素或F元素，E和F之间用逗号分隔	
+	div, p {color: red;}
+E F		后代元素选择器，匹配所有属于E元素后代的F元素，E和F之间用空格分隔
+	li a { font-weight:bolj;}
+E > F	子元素选择器，匹配所有E元素的子元素F	
+	div > p { color:red; }
+E + F	毗邻元素选择器，匹配所有紧随E元素之后的同级元素F
+	div + p { color:red; }
 ```
 
 
 
-#### 2 组合选择器
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>02组合选择器</title>
+    <meta charset="UTF-8">
+    <style>
+        .selector {
+            color: mediumslateblue;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        /* 多元素选择器 */
+        b, li {
+            color: aquamarine;
+            font-weight: bolder;
+        }
+        /* 后代元素选择器 */
+        li a{
+            color: chocolate;
+            font-size: bold;
+            font-size: 18px;
+        }
+
+        /* 子元素选择器 */
+        div > p {
+            font-size: 18px;
+            color: mediumvioletred;
+        }
+
+        /* 毗邻元素选择器 */
+        div + p {
+            color:midnightblue;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 多元素选择器 -->
+    <p class="selector">多元素选择器</p>
+    <b>mission：</b>
+    <ul>
+        <li>runing</li>
+        <li>reading</li>
+        <li>trip</li>
+    </ul>
+    <hr>
+    <!-- 后代元素选择器 -->
+    <p class="selector">后代元素选择器</p>
+    <b>Internet sites</b>
+    <ul>
+        <li><a href="www.baidu.com">baidu</a></li>
+        <li><a href="book.douban.com">douban</a></li>
+    </ul>
+    <hr>
+
+    <!-- 子元素选择器 -->
+    <div style="width: 800px;">
+        <h1>冬雨</h1>
+        <p>
+            冬雨是那么的缠绵，凄凉，她推开了科天的大门，预示着我们：冬天已经来到。
+            她的美丽感染了棵棵树木上的叶子，叶儿欲追寻她的足迹，随风飘落，在空中
+            不停的舞动，给人以静静的遐想和沉思。</p>
+        <p>
+            冬雨，没有夏雨那么热情奔放，更没有秋雨的冷酷，有的只是一丝悲伤与一腔
+            善感的情怀。雨还在细细地下着，显得那么孤单与悲凉。</p>
+    </div>
+    <hr>
+
+    <!-- 毗邻元素选择器 -->
+    <div style="width: 800px;">
+        <h1>论语</h1>
+        <p>学而时习之，不亦说乎？</p>
+        <div><p>学：学问</p></div>
+        <p>有朋自远方来，不亦乐乎？</p>
+        <p>人不知而不愠，不亦君子乎？</p>
+    </div>
+</body>
+</html>
 
 ```
- E,F         多元素选择器，同时匹配所有E元素或F元素，E和F之间用逗号分隔         div,p { color:#f00; }
-
- E F         后代元素选择器，匹配所有属于E元素后代的F元素，E和F之间用空格分隔    li a { font-weight:bold;
- E > F       子元素选择器，匹配所有E元素的子元素F                            div > p { color:#f00; }
- 
- E + F       毗邻元素选择器，匹配所有紧随E元素之后的同级元素F                  div + p { color:#f00; }  
-```
-
-![img](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif) View Code
 
 注意**嵌套规则**：
 
@@ -138,37 +339,95 @@ E: 标签选择器，匹配所有使用E标签的元素	p {color: green;}
 3. li内可以包含div
 4. 块级元素与块级元素并列、内联元素与内联元素并列。
 
-![img](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif) View Code
-
-#### 3 属性选择器
-
-[![复制代码](https://common.cnblogs.com/images/copycode.gif)](javascript:void(0);)
+### 3 属性选择器
 
 ```
- E[att]         匹配所有具有att属性的E元素，不考虑它的值。（注意：E在此处可以省略，比如“[cheacked]”。以下同。）   p[title] { color:#f00; }
+E[att]			匹配所有具有att属性的E元素，不考虑它的值。（注意：E在此处可以省略，比如“[cheacked]”。以下同。）
+	p[title] { color:red; }
 
+E[att=val]		匹配所有att属性等于“val”的E元素
+ 	div[class=”error”] { color: purple; }
  
- E[att=val]     匹配所有att属性等于“val”的E元素                                 div[class=”error”] { color:#f00; }
+E[att~=val]		匹配所有att属性具有多个空格分隔的值、其中一个值等于“val”的E元素
+	td[class~=”name”] { color: aqua; }
 
- 
- E[att~=val]    匹配所有att属性具有多个空格分隔的值、其中一个值等于“val”的E元素      td[class~=”name”] { color:#f00; }
+E[attr^=val]	匹配属性值以指定值开头的每个元素
+	div[class^="test"]{background: yellowgreen;}
 
- E[attr^=val]    匹配属性值以指定值开头的每个元素                     div[class^="test"]{background:#ffff00;}
+E[attr$=val]	匹配属性值以指定值结尾的每个元素
+	div[class$="test"]{background: grey;}
 
- E[attr$=val]    匹配属性值以指定值结尾的每个元素                     div[class$="test"]{background:#ffff00;}
-
- E[attr*=val]    匹配属性值中包含指定值的每个元素                     div[class*="test"]{background:#ffff00;}
+E[attr*=val]	匹配属性值中包含指定值的每个元素
+	div[class*="test"]{background:#ffff00;}
 ```
 
-[![复制代码](https://common.cnblogs.com/images/copycode.gif)](javascript:void(0);)
+**coding**
 
-#### 4 伪类(Pseudo-classes)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03属性选择器</title>
+    <style>
+        p[class]{
+            color: red;
+        }
+
+        p[class="name"] {
+            color: purple;
+        }
+        p[class~="sex"] {
+            color: aquamarine;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        p[class^="nu"] {
+            color: yellowgreen;
+            font-size: 16px;
+            font-weight: bolder;
+        }
+        p[class$="by"] {
+            color: gray;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        p[class*="ei"] {
+            color: burlywood;
+            font-weight: bold;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <p class="number">学号：20192222</p>
+        <p class="name">姓名：王二小</p>
+        <p class="  sex">性别：男</p>
+        <p class="nation">地区：江西</p>
+        <p class="hobby">爱好：阅读</p>
+        <p class="height">身高：150</p>
+    </div>
+    <hr>
+    <div>
+        <p class="number">学号：20197328</p>
+        <p class="name">姓名：张三</p>
+        <p class="  sex">性别：女</p>
+        <p class="area">地区：湖南</p>
+        <p class="hobby">爱好：跑步</p>
+        <p class="height">身高：190</p>
+    </div>
+</body>
+</html>
+```
+
+### 4 伪类(Pseudo-classes)
 
 CSS伪类是用来给选择器添加一些特殊效果。
 
 **anchor伪类：**专用于控制链接的显示效果
-
-[![复制代码](https://common.cnblogs.com/images/copycode.gif)](javascript:void(0);)
 
 ```
 a:link（没有接触过的链接）,用于定义了链接的常规状态。
@@ -192,9 +451,12 @@ a:hover {color: #FF00FF} /* 鼠标移动到链接上 */
 a:active {color: #0000FF} /* 选定的链接 */ 格式: 标签:伪类名称{ css代码; }
 ```
 
-[![复制代码](https://common.cnblogs.com/images/copycode.gif)](javascript:void(0);)
+**coding**
 
-![img](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif) View Code
+```html
+```
+
+
 
 **补充：**
 
@@ -211,28 +473,25 @@ a:active {color: #0000FF} /* 选定的链接 */ 格式: 标签:伪类名称{ css
  p:after         在每个 <p> 元素的内容之前插入内容                    p:after{ content:"hello"；color:red}
 ```
 
-#### 5 css优先级和继承
+### 5 css优先级和继承
 
 **CSS优先级:**
 
 所谓CSS优先级，即是指CSS样式在浏览器中被解析的先后顺序。
 
 ```
-样式表中的特殊性描述了不同规则的相对权重，它的基本规则是：      1 内联样式表的权值最高       style=""-------------------1000；
-　　 2 统计选择符中的ID属性个数。    #id    －－－－－－－－－－－－－100
-　　3 统计选择符中的CLASS属性个数。 .class  －－－－－－－－－－－－－10
- 4 统计选择符中的HTML标签名个数。     p     －－－－－－－－－－－－－-1
+样式表中的特殊性描述了不同规则的相对权重，它的基本规则是：
+1 内联样式表的权值最高			 style=""-------------------1000；
+2 统计选择符中的ID属性个数。		#id    －－－－－－－－－－－－－100
+3 统计选择符中的CLASS属性个数。		.class  －－－－－－－－－－－－－10
+4 统计选择符中的HTML标签名个数。     p     －－－－－－－－－－－－－-1
 ```
 
 按这些规则将数字符串逐位相加，就得到最终的权重，然后在比较取舍时按照从左到右的顺序逐位比较。
 
-![img](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif) View Code
-
 **CSS的继承性:**
 
- 
-
-   继承是CSS的一个主要特征，它是依赖于祖先-后代的关系的。继承是一种机制，它允许样式不仅可以应用于某个特定的元素，还可以应用于它的后代。例如一个BODY定义了的颜色值也会应用到段落的文本中。
+ 继承是CSS的一个主要特征，它是依赖于祖先-后代的关系的。继承是一种机制，它允许样式不仅可以应用于某个特定的元素，还可以应用于它的后代。例如一个BODY定义了的颜色值也会应用到段落的文本中。
 
 ```
 body{color:red;}    <p>helloyuan</p>
@@ -254,106 +513,296 @@ p{color:green}
 
 ![img](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif) View Code
 
-### 三  CSS的常用属性 
+## 三  CSS的常用属性 
 
-#### 1 颜色属性
+### 1 颜色属性
 
-```
-<div style``=``"color:blueviolet"``>ppppp<``/``div>` `<div style``=``"color:#ffee33"``>ppppp<``/``div>` `<div style``=``"color:rgb(255,0,0)"``>ppppp<``/``div>` `<div style``=``"color:rgba(255,0,0,0.5)"``>ppppp<``/``div>
-```
+```html
+<div style="color:blueviolet">Hello world</div>
 
-#### 2  字体属性
+<div style="color:#ffee33">Hello world</div>
 
-```
-font``-``size: ``20px``/``50``%``/``larger` `font``-``family:``'Lucida Bright'` `font``-``weight: lighter``/``bold``/``border``/` `<h1 style``=``"font-style: oblique"``>老男孩<``/``h1>
-```
+<div style="color:rgb(255,0,0)">Hello world</div>
 
-#### 3  背景属性
-
-[![复制代码](https://common.cnblogs.com/images/copycode.gif)](javascript:void(0);)
-
-```
-background-color: cornflowerblue
-
-background-image: url('1.jpg');
-
-background-repeat: no-repeat;(repeat:平铺满)
-
-background-position: right top（20px 20px）;(横向：left center right)(纵向：top center bottom)
-
-      简写：<body style="background: 20px 20px no-repeat #ff4 url('1.jpg')">
-
-              <div style="width: 300px;height: 300px;background: 20px 20px no-repeat #ff4 url('1.jpg')"> 
+<div style="color:rgba(255,0,0,0.5)">Hello world</div>
 ```
 
-[![复制代码](https://common.cnblogs.com/images/copycode.gif)](javascript:void(0);)
+### 2  字体属性
+
+```css
+font-size: 20px/50%/larger;
+font-family: 'Lucida Bright';
+font-weight: lighter/bold/border;
+```
+
+**coding**
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>02字体属性</title>
+    <style>
+        #p1 {
+            /* 20px/50%/larger */
+            font-size: 20px;
+            font-family:'Lucida Bright';
+            /* lighter/bold/border/ */
+            font-weight: lighter;
+
+        }
+        #p2 {
+            font-size: 50%;
+            font-family: "Lucida Bright";
+            font-weight: bold;
+        }
+        #p3 {
+            font-size: larger;
+            font-family: "Lucida Bright";
+            font-weight: bolder;
+            
+        }
+    </style>
+</head>
+<body>
+    <p id="p1">Hello world</p>
+    <p id="p2">Hello world</p>
+    <p id="p3">Hello world</p>
+</body>
+</html>
+```
+
+### 3  背景属性
+
+**写法**
+
+```css
+background-image: url("/resource/image/loriyuhv.jpg");
+background-repeat: no-repeat;	/* (repeat:平铺满) */
+background-size: 600px 600px;
+background-position: right top(20px 20px);	/* (横向：left center right)(纵向：top center bottom) */
+background-color: pink;
+```
+
+**简写**
+
+```css
+/* 第一种写法 */
+background: center no-repeat url('/resource/image/loriyuhv.jpg');
+/* 第二种写法 */
+background: 600px 600px no-repeat url('/resource/image/loriyuhv.jpg');
+```
 
 注意：如果将背景属性加在body上，要记得给body加上一个height，否则结果异常，这是因为body为空，无法撑起背景图片；另外，如果此时要设置一个width＝100px，你也看不出效果，除非你设置出html。  
 
-![img](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif) View Code
+**coding**
 
-#### eg:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='UTF-8'>
+    <title>07背景属性</title>
+    <style>
+        .image01{
+            margin: 120px;
+            border-color: yellowgreen;
+            border-width: 40px;
+            border-style: solid;
+            width: 800px;
+            height: 800px;
+            
+            background-image: url("/resource/image/loriyuhv.jpg");
+            background-repeat: no-repeat;
+            background-size: 600px 600px;
+            background-position: center;
+            
 
-![img](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif) View Code
-
-#### 4  文本属性
-
-[![复制代码](https://common.cnblogs.com/images/copycode.gif)](javascript:void(0);)
-
+        }
+        /* 简写： */
+        .image02{
+            margin: 120px;
+            border-color: yellowgreen;
+            border-width: 40px;
+            border-style: solid;
+            width: 800px;
+            height: 800px;
+            background: center no-repeat url('/resource/image/loriyuhv.jpg');
+        }
+    </style>
+</head>
+<body style="background-color:bisque">
+    <div class="image01"></div>
+    <div class="image02"></div>
+</body>
+</html>
 ```
-font-size: 10px;
 
-text-align: center;   横向排列
+### 4  文本属性
 
-line-height: 200px;   文本行高 通俗的讲，文字高度加上文字上下的空白区域的高度 50%:基于字体大小的百分比
+```css
+font-size: 18px;    /* 字体大小 */
+text-align: left;   /* 文本排列：横向排列 */
+
+/* 文本行高 通俗的讲，文字高度加上文字上下的空白区域的高度 50%:基于字体大小的百分比 */
+line-height: 30px;  
+
+text-indent: 2em;   /* 首行缩进 */
+letter-spacing: 8px;    /* 字间距：用于中文 */
+word-spacing: 30px; /* 字间距: 用于英文*/
+
+/* lowercase: 小写字体 uppercase: 大写字母 capitalize: 单词首字母大写 */
+text-transform: lowercase; 
 
 vertical-align:－4px  设置元素内容的垂直对齐方式 ,只对行内元素有效，对块级元素无效
-
-
-text-indent: 150px;   首行缩进
-letter-spacing: 10px;
-word-spacing: 20px;
-text-transform: capitalize;
 ```
 
-[![复制代码](https://common.cnblogs.com/images/copycode.gif)](javascript:void(0);)
+**思考**
 
-#### 思考：
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer .item {
+            width: 300px;
+            height: 200px;
+            background-color: chartreuse;
+            display: inline-block;
+        }
+    </style>
+</head>
 
-![img](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif) vertical-align
+<body>
+    <div class="outer">
+        <div class="item" style="vertical-align: top">ll
+        </div>
+        <div class="item">
+        </div>
+    </div>
+</body>
+</html>
+```
 
-#### 5  边框属性
+### 5  边框属性
+
+```css
+width: auto;
+text-align: center;
+border-style: solid;
+border-color: chartreuse;
+border-width: 2px;
+/* 简写 */
+/* border: 30px purple solid; */
+```
+
+**coding**
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>05边框属性</title>
+    <style>
+        .title {
+            width: auto;
+            text-align: center;
+            border-style: solid;
+            border-color: chartreuse;
+            border-width: 2px;
+            /* 简写 */
+            /* border: 30px purple solid; */
+        }
+    </style>
+</head>
+<body>
+    <div class="title">我的家乡</div>
+</body>
+</html>
+```
+
+### 6  列表属性
+
+```css
+list-style: decimal-leading-zero;
+list-style: disc;
+list-style: none;
+list-style: circle;
+list-style: upper-alpha;
+list-style: disc;
+```
+
+**coding**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06列表属性</title>
+    <style>
+        ul, ol{
+            list-style: decimal-leading-zero;
+            list-style: disc;
+            list-style: none;
+            list-style: circle;
+            list-style: upper-alpha;
+            list-style: disc;
+        }
+    </style>
+</head>
+<body>
+    <b>计划</b>
+    <ul>
+        <li>跑步</li>
+        <li>阅读</li>
+        <li>听力</li>
+    </ul>
+    <b>习惯</b>
+    <ol>
+        <li>早睡</li>
+        <li>早起</li>
+        <li>运动</li>
+    </ol>
+</body>
+</html>
+```
+
+
+
+###  7  dispaly属性
 
 ```
-border``-``style: solid;` `border``-``color: chartreuse;` `border``-``width: ``20px``;` `简写：border: ``30px` `rebeccapurple solid;
-```
-
-#### 6  列表属性
-
-```
-ul,ol{  ``list``-``style: decimal``-``leading``-``zero;``     ``list``-``style: none; <br>     ``list``-``style: circle;``     ``list``-``style: upper``-``alpha;``     ``list``-``style: disc; }
-```
-
-#### 7  dispaly属性
-
-```
-none``block``inline
+inline: 设置成内联元素
+none: 无，什么都不会显示出来
+block: 块级元素
 ```
 
 display:inline-block可做列表布局，其中的类似于图片间的间隙小bug可以通过如下设置解决：
 
+```css
+#outer{
+    border: 3px dashed;
+    word-spacing: -5px;
+}
 ```
-#outer{``      ``border: 3px dashed;``      ``word-spacing: -5px;``    ``}
-```
 
-#### 8  外边距和内边  
+### 8  外边距和内边  
 
-![img](https://images2015.cnblogs.com/blog/877318/201610/877318-20161020102031154-222250498.png)![img](https://images2015.cnblogs.com/blog/877318/201610/877318-20161020102104482-1393899329.png)![img](https://images2015.cnblogs.com/blog/877318/201610/877318-20161020102135748-1861483747.png)
+<div>
+    <img src="image\03.png" style="width:400px; height:400px; display: inline">
+    <img src="image\02.png" style="width:400px; height:400px; display: inline">
+    <img src="image\04.png" style="width:880px; height:600px; display: inline">
+</div>
 
-- **margin:       用于控制元素与元素之间的距离；margin的最基本用途就是控制元素周围空间的间隔，从视觉角度上达到相互隔开的目的。**
-- **padding:      用于控制内容与边框之间的距离；**  
-- **Border(边框)   围绕在内边距和内容外的边框。**
-- **Content(内容)  盒子的内容，显示文本和图像。**
+- **margin:  用于控制元素与元素之间的距离；margin的最基本用途就是控制元素周围空间的间隔，从视觉角度上达到相互隔开的目的。**
+- **padding:  用于控制内容与边框之间的距离；**  
+- **border(边框)   围绕在内边距和内容外的边框。**
+- **content(内容)  盒子的内容，显示文本和图像。**
 
 元素的宽度和高度:
 
@@ -377,7 +826,10 @@ margin:10px;
 
  练习： 300px*300px的盒子装着100px*100px的盒子，分别通过margin和padding设置将小盒子 移到大盒子的中间
 
-![img](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif) View Code
+```html
+```
+
+
 
 思考1:
 
@@ -562,7 +1014,7 @@ overflow:hidden;
 　　<div box3
 　　效果图：
 
- 
+
 
 　　![img](https://images0.cnblogs.com/blog2015/449469/201507/292243208766594.jpg)
 
@@ -616,59 +1068,7 @@ div  tab``a   tab``div.main>ul>li.c*4  tab
 
 #### 1.6 响应式布局
 
- 
 
-参考文献：
-
-http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
-
-http://www.jianshu.com/p/a3da5e27d22b
-
-[好文要顶](javascript:void(0);) [关注我](javascript:void(0);) [收藏该文](javascript:void(0);) [![img](https://common.cnblogs.com/images/icon_weibo_24.png)](javascript:void(0);) [![img](https://common.cnblogs.com/images/wechat.png)](javascript:void(0);)
-
-[![img](https://pic.cnblogs.com/face/877318/20160110101629.png)](https://home.cnblogs.com/u/yuanchenqi/)
-
-[Yuan先生](https://home.cnblogs.com/u/yuanchenqi/)
-[关注 - 1](https://home.cnblogs.com/u/yuanchenqi/followees/)
-[粉丝 - 4393](https://home.cnblogs.com/u/yuanchenqi/followers/)
-
-[+加关注](javascript:void(0);)
-
-9
-
-0
-
-posted @ 2016-10-19 16:39 [Yuan先生](https://www.cnblogs.com/yuanchenqi/) 阅读(13844) 评论(1) [编辑](https://i.cnblogs.com/EditArticles.aspx?postid=5977825) [收藏](javascript:void(0)) [举报](javascript:void(0))
-
-
-
-
-
-Post Comment
-
-[回复 ](javascript:void(0);)[引用](javascript:void(0);)
-
-[#1楼](https://www.cnblogs.com/yuanchenqi/articles/5977825.html#3924590) 2018-03-16 09:47 | [闹世闲人](https://www.cnblogs.com/rainy008/)
-
-mark
-
-[支持(3) ](javascript:void(0);)[反对(0)](javascript:void(0);)
-
-
-
-
-
-[刷新评论](javascript:void(0);)[刷新页面](https://www.cnblogs.com/yuanchenqi/articles/5977825.html#)[返回顶部](https://www.cnblogs.com/yuanchenqi/articles/5977825.html#top)
-
-（评论功能已被禁用）
-
-[【推荐】博客园x阿里云联合征文活动：我修复的印象最深的一个bug](https://developer.aliyun.com/topic/bokeyuanbloggers?userCode=swh7dvlt)
-[【推荐】并行超算云面向博客园粉丝推出“免费算力限时申领”特别活动](https://www.cnblogs.com/cmt/p/15375689.html)
-[【推荐】跨平台组态\工控\仿真\CAD 50万行C++源码全开放免费下载！](http://www.uccpsoft.com/index.htm)
-[【推荐】博客园老会员送现金大礼包，VTH大屏助力研发企业协同数字化](https://shunshun.com/huodong/cnblogs202111)
-[【推荐】华为HMS Core线上Codelabs挑战赛第3期：用3D建模构建元宇宙](https://brands.cnblogs.com/huawei/p/2368)
-
-[![img](https://img2020.cnblogs.com/blog/35695/202110/35695-20211008160624813-1694591598.jpg)](https://c.gridsumdissector.com/r/?gid=gad_545_mzyfo0un&ck=46&adk=566&autorefresh=__AUTOREFRESH__)
 
 **编辑推荐：**
 · [N 种仅仅使用 HTML/CSS 实现各类进度条的方式](https://www.cnblogs.com/coco1s/p/15506976.html)
@@ -677,10 +1077,38 @@ mark
 · [OAuth 2.0 的探险之旅](https://www.cnblogs.com/myshowtime/p/15500050.html)
 · [.NET 生态系统的蜕变之 .NET 6](https://www.cnblogs.com/shanyou/p/15494215.html)
 
-**最新新闻**：
-· [Alex Baldwin撰文祝贺Vim迎来30周岁生日（2021-11-06 18:24）](https://news.cnblogs.com/n/706410/)
-· [任天堂NS主机第三方游戏数量已超6700款（2021-11-06 18:18）](https://news.cnblogs.com/n/706409/)
-· [加州理工寄望太空太阳能发电 明年开启早期技术演示（2021-11-06 18:11）](https://news.cnblogs.com/n/706408/)
-· [NASA用“水滴”探测器保卫地球？美国“行星防御”行动曝光（2021-11-06 18:07）](https://news.cnblogs.com/n/706407/)
-· [我国成功发射遥感三十五号卫星A、B、C星（2021-11-06 18:00）](https://news.cnblogs.com/n/706406/)
-» [更多新闻...](https://news.cnblogs.com/)
+
+
+# 四 CSS 流式布局
+
+"文档流"或"流式布局"是在对布局进行任何更改之前，在页面上显示"块"和"内联"元素的方式。 这个"流"本质上是一系列的事物，它们都在你的布局中一起工作，并且互相了解。 一旦某部分脱离了"流"，它就会独立地工作。
+
+ 
+
+在文档流中，内联元素按内联方向显示，即词语在依据文件写作模式的句子中表示的方向。块元素则一个接一个地显示，就像该文档的写作模式中的段落一样。 因此在英语中，内联元素从左边开始一个接一个地显示，块元素从顶部开始向下显示并移动页面。
+
+**实例**
+
+```css
+p {
+    border: 2px solid green;
+}
+span {
+    background-color: lightblue;
+}
+```
+
+
+
+```html
+<div class="box">
+    <p>One <span>November</span> night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney. Their names were Stephen and Joseph Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific knowledge and new discovery.</p>
+    <p>Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of their fires without drawing any special inspiration from the fact.”</p>
+</div>
+```
+
+
+
+下面的示例演示块和内联级别框。两个带有绿色边框的段落元素是"块"级，其中一个在另一个下面显示。
+
+第一个句子还包括一个带有蓝色背景的 span 元素。 这是行内级别，因此显示在句子的适当位置。
