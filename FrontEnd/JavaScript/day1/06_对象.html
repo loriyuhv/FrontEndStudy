@@ -14,12 +14,13 @@
         // 创建对象的三种方式
 
         // 一、 利用字面量创建对象 就是花括号{}里面包含了表达这个具体事物(对象)的属性和方法
-        var obj = {};   // 创建了一个空的对象
-        var obj = {
+        var obj_null = {};   // 创建了一个空的对象
+
+        var person = {
             name: "李嘉俊",
             sex: "female",
             age: 8,
-            hello: function() {
+            hello: function () {
                 console.log("Hello world!");
             }
         };
@@ -33,17 +34,18 @@
         // 2. 使用对象
         /*
         1) 调用对象的属性，我们采取对象名.属性名 或者 对象名["属性名"]
+        console.log(obj.name);
+        console.log(obj["name"]);
+
+        2) 调用对象的方法 对象名.方法名
+        obj.hello();
          */
-        // console.log(obj.name);
-        // console.log(obj["name"]);
-        //2) 调用对象的方法 对象名.方法名
-        // obj.hello();
 
         // 变量、属性、函数、方法总结
 
         // 1. 变量和属性的相同点，他们都是用来存储数据的
-        var num = 10;
-        var obj = {
+        var number = 10;
+        var obj01 = {
             age: 18,
             fn: function() {
                 console.log("Hello world");
@@ -53,9 +55,9 @@
             console.log("Hello fun.");
         }
         // 变量：单独声明并赋值 使用的时候直接写变量名，单独存在
-        // console.log(num);
+        // console.log(number);
         // 属性：在对象里面是不需要声明的，使用的时候必须是对象.属性
-        // console.log(obj.age);
+        // console.log(obj01.age);
 
         // 2. 函数和方法的相同点，都是实现某种功能
         // 函数是单独声明 并且调用的 函数名() 单独存在的
@@ -64,18 +66,18 @@
         // obj.fn();
 
         // 二、利用new Object创建对象
-        var obj = new Object(); // 创建了一个空的对象
-        obj.name = "王师维";
-        obj.age = 18;
-        obj.sex = "male";
-        obj.hello = function() {
+        var obj_null_02 = new Object(); // 创建了一个空的对象
+        obj_null_02.name = "王师维";
+        obj_null_02.age = 18;
+        obj_null_02.sex = "male";
+        obj_null_02.hello = function() {
             document.write("Hello world!");
         };
-        // 1）我们师利用 等号=赋值的方法 添加对象的属性和方法
+        // 1）我们是利用 等号=赋值的方法 添加对象的属性和方法
         // 2）每个属性和方法之间用分号结束
 
-        // document.write(obj.name + "<br>");
-        // document.write(obj.hello());
+        document.write(obj_null_02.name + "<br>");
+        obj_null_02.hello();
 
         // 我们为什么构造函数
         // 因为我们一次创建一个对象，里面有很多的属性和方法是大量相同的，我们只能复制；因此我们可以利用函数的方法，
@@ -94,11 +96,13 @@
         }
         new 构造函数名();
          */
+
+
         // (1) 构造函数 明星 泛指的某一大类 它类似于java语言里面的类（class）
-        function Star(uname, age, sex) {
-            this.name = uname;
-            this.age = age;
-            this.sex = sex;
+        function Star(get_name, get_age, get_sex) {
+            this.name = get_name;
+            this.age = get_age;
+            this.sex = get_sex;
             this.sing = function(sang) {
                 console.log(sang);
             }
@@ -114,6 +118,7 @@
         // console.log(ldh.age);
         // ldh.sing("舍得");
         var zxy = new Star("张学友", 19, "男");
+
         // console.log(zxy["sex"]);
         // 1）构造函数名字首字母要大写
         // 2）我们的构造函数不需要return就可以返回结果
