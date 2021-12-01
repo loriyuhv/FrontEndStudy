@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>检测是否为数组方法</title>
+</head>
+<body>
+<script>
+    // 翻转数组
+    function reverse(arr) {
+        if (arr instanceof Array) {
+            let newArr = [];
+            for (let i = arr.length - 1; i >= 0; i--) {
+                newArr[newArr.length] = arr[i];
+            }
+            return newArr;
+        }
+        else
+            console.log("Error!!! arr is", typeof arr)
+    }
+
+    console.log(reverse([1, 2, 3]));
+    console.log(reverse({"name": "jerry", "age": 18}));
+
+    // 检测是否为数组
+    // 1) instanceof 运算符 它可以用来检测是否为数组
+    let array = [];
+    let obj = {};
+    // console.log(array instanceof Array);
+    // console.log(obj instanceof Array);
+</script>
+</body>
+</html>
