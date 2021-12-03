@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组索引方法</title>
+</head>
+<body>
+<script>
+    // 返回数组元素索引号方法 indexOf(数组元素) 作用就是返回该数组元素的索引号
+    // 它只返回第一个满足条件的索引号
+    // 它如果在该数组找不到元素，则返回-1
+    // indexOf从前面开始查找
+    let arr = [1, 2, 3, 4, 5, 2];
+    console.log(arr.indexOf(2));
+
+    // lastIndexOf是从后面开始查找
+    console.log(arr.lastIndexOf(2));
+
+    // 案例
+    /*
+    1. 目标：把旧数组里面不重复的元素选取出来放到新数组中，重复的元素只保留一个，放到数组中去重。
+    2. 核心算法：我们遍历旧数组，然后拿着旧数组元素去查询新数组，如果该元素在新数组里面没有出现过，我们就添加，否则不添加。
+    3. 我们怎么知道元素没有存在？利用数组indexOf(数组元素)如果返回时-1就说明新数组里面没有改元素
+
+    旧数组：['c', 'a', 'a', 'z', 'x', 'c', 'b']
+    新数组：[]
+    */
+    // 封装一个去重的函数
+    let oldArr = ['c', 'a', 'a', 'z', 'x', 'c', 'b'];
+    
+    function unique(arr) {
+        let newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (newArr.indexOf(arr[i]) === -1) {
+                newArr.push(arr[i]);
+            }
+        }
+        return newArr;
+    }
+
+    console.log(unique(oldArr));
+
+    
+</script>
+</body>
+</html>

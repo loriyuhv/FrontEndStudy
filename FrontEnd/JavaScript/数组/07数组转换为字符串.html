@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组转换为字符串</title>
+</head>
+<body>
+<script>
+    // 数组转换为字符串
+    // 1. toString() 将我们的数组转换为字符串。
+    let arr = [1, 2, 3];
+    console.log(arr);
+    console.log(arr.toString());    // 1, 2, 3
+
+    // 2. join(分隔符)
+    let arr1 = ["green", "blue", "pink"];
+    console.log(arr1.join());   // 默认用逗号分隔
+    console.log(arr1.join(":"));
+
+    // concat() 连接两个或多个数组，不影响原数组。 返回值：返回一个新的数组
+    b = arr.concat(arr1);
+    console.log(b);
+
+    // slice() 数组截断slice(begin, end)。 返回值：返回被截取项目的新数组。
+    c = b.slice(2, );
+    console.log(c);
+
+    // splice() 数组删除splice(第几个开始，要删除个数) 返回值：返回被删除项目的新数组，注意，这个会影响原数组。
+    d = c.splice(2, 3);
+    console.log(c);
+    console.log(d);
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组排序</title>
+</head>
+<body>
+<script>
+    // 数组排序
+    // 1. 翻转数组
+    let arr = ["pink", "red", "blue"];
+    arr.reverse();
+    console.log(arr);
+    // 2. 数组排序（冒泡排序）
+    let arr1 = [3, 14, 7, 12, 1, 77];
+    arr1.sort(function(a, b) {
+        // return a - b;   // 升序的顺序排列
+        return b - a;   // 降序的顺序排列
+    });
+    console.log(arr1)
+    
+</script>
+</body>
+</html>
