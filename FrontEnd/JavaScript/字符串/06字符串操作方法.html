@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串操作方法</title>
+    <script>
+        // 字符串操作方法
+        // 1. concat('字符串1', '字符串2'....)
+        var str = "Jerry";
+        var str2 = "Tom";
+        console.log(str.concat(", Tom"));
+
+        // 2. substr(start, length) 从start位置开始(索引号)，length取的个数 重点记住这个
+        console.log(str.substr(0, 3));
+
+        // 3. slice(start, end) 从start位置开始，截取到end位置，end取不到(他们俩都是索引号)
+        console.log(str2.slice(0, 4));
+
+        // 4. substring(start, end) 从start位置开始，截取到end位置，end取不到，基本和slice相同但是不接受负值
+        console.log(str2.substring(0, 4));
+    </script>
+</head>
+
+<body>
+    
+</body>
+</html>
