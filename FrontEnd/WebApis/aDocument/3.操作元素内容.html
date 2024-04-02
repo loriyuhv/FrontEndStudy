@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作元素内容</title>
+</head>
+<body>
+    <div class="introduce">
+        <h1>王师维</h1>
+        我想陪你去远方！！！
+    </div>
+
+    <script type="text/javascript">
+        let element = document.querySelector('.introduce');
+        // 1. `innerText` 将文本内容添加/更新到任意标签位置，文本中包含的标签不会被解析。
+        // element.innerText = "<h1>王师维</h1>我想改变自己！！！";
+
+        // 2. `innerHTML` 将文本内容添加/更新到任意标签位置，文本中包含的标签会被解析。
+        element.innerHTML = "<h1>王师维</h1>我想改变自己！！！";
+
+    </script>
+</body>
+</html>

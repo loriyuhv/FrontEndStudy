@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>剩余参数</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        // 案例1：求和
+        function getSum(...args) {
+            let sum = 0
+            for (let i = 0; i < args.length; i++) {
+                sum += args[i]
+            }
+            return sum
+        }
+
+        let sum = getSum(1, 3, 5, 8)
+        console.log(sum)
+
+        // 案例2，传入基础url，并携带get方法参数
+        function getUrl(baseUrl, ...args){
+            let url = baseUrl + '?';
+            for (let i = 0; i < args.length; i++) {
+                url += args[i] + '&'
+            }
+            return url
+        }
+
+        let url = getUrl("user.loriyuhv.tech", 'username=Jerry', 'password=0420')
+        console.log(url)
+
+    </script>
+</body>
+</html>

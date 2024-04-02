@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数this</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // 以前this的指向：谁调用的这个函数，this就指向谁
+        // console.log(this)   // window
+
+        // 普通函数
+        function fn1() {
+            console.log(this)   // window
+        }
+        // fn1()
+
+        // 对象方法里面的this
+        const obj = {
+            name: 'Jerry',
+            sayHello: function() {
+                console.log(this)   // obj
+            }
+        }
+        // obj.sayHello()
+
+        // 2. 箭头函数的this，是上一层作用域的this指向
+        /**
+         * 在箭头函数出现之前，每一个新函数根据它是被如何调用的来定义
+         *  这个函数的this值，非常令人讨厌。箭头函数不会创建自己的this,
+         *  它只会从自己的作用域链的上一层沿用this。
+         */
+        const fn2 = () => {
+            console.log(this)
+        }
+        // fn2()   // window
+
+        // 对象方法箭头函数this
+        const jerry = {
+            name: 'Jerry',
+            sayHello: () => {
+                console.log(this)   // window obj是window调用的
+            }
+        }
+
+        // jerry.sayHello()
+        // console.log(window)
+
+        const tom = {
+            name: 'Tom',
+            sayHi: function() {
+                let i = 0
+                const count = () => {
+                    console.log(this)   // tom
+                }
+                return count()
+            }
+        }
+
+        tom.sayHi()
+    </script>
+</body>
+</html>

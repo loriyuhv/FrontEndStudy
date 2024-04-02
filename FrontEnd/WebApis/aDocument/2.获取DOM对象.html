@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取DOM对象</title>
+</head>
+<body>
+    <h3>查找元素类型节点</h3>
+    <p>从整个 DOM 树中查找 DOM 节点是学习 DOM 的第一个步骤。</p>
+    <p>我要去远方</p>
+    <ul>
+        <li>元素1</li>
+        <li>元素2</li>
+        <li>元素3</li>
+        <li>元素4</li>
+    </ul>
+
+    <script type="text/javascript">
+        /**
+         * 1. querySelector   满足条件的第一个元素
+         * 2. querySelectorAll  满足条件的元素集合 返回伪数组
+         */
+        // 1.获取第一个p元素
+        let p = document.querySelector('p')
+        console.log(p)
+        // 2.获取第一个li元素
+        let li = document.querySelector('li')
+        console.log(li)
+    </script>
+</body>
+</html>
