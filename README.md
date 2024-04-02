@@ -1,2 +1,4 @@
-# Language
-主要是总结一些关于编程语言的基础语法
+# FrontEndStudy
+前端知识的系统学习
+- Html + CSS + JavaScript
+- 框架：Vue2
