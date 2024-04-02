@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天气案例_深度监视</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>今天天气很{{info}}</h2>
+        <button v-on:click="changeWeather">切换天气</button>
+
+    </div>
+</body>
+
+<script>
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            isHot: true,
+        },
+        computed: {
+            info: function() {
+                return this.isHot ? '炎热' : '凉爽'
+            },
+        },
+        methods: {
+            changeWeather() {
+                return this.isHot = !this.isHot
+            }
+        },
+        watch: {
+            // 正常写法
+            // isHot: {
+            //     // immediate: true,
+            //     // deep: true, // 深度监视
+            //     handler(newValue, oldValue) {
+            //         console.log('isHot属性被修改了', newValue, oldValue)
+            //     }
+            // },
+            // 简写
+            // isHot(newValue, oldValue) {
+            //     console.log('isHot属性被修改了', newValue, oldValue)
+            // }
+        }
+    })
+    // 完整写法
+    // vm.$watch('isHot', {
+    //     immediate: true,
+    //     deep: true, // 深度监视
+    //     handler(newValue, oldValue) {
+    //         console.log('isHot属性被修改了', newValue, oldValue)
+    //     }
+    // })
+
+    vm.$watch('isHot', function(newValue, oldValue) {
+        console.log('isHot属性被修改了', newValue, oldValue)
+    })
+</script>
+</html>
