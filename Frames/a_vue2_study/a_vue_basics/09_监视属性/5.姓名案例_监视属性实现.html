@@ -7,6 +7,15 @@
 </head>
 
 <body>
+    <!--
+        computed和watch之间的区别：
+            1）computed能完成的功能，watch都可以完成。
+            2）watch能完成的功能，computed不一定能完成，例如：watch可以进行异步操作。
+        两个重要的小原则：
+            1）所有被Vue管理的函数，最好写成普通函数。这样this的指向才是vm或组件实例对象。
+            2）所有不被Vue所管理的函数（定时器的回调函数、ajax的回调函数等、Promise的
+                回调函数），最好写成箭头函数，这样this的指向才是vm或组件实例对象。
+    -->
     <div id="root">
         <label>
             姓：<input type="text" v-model="firstName"> <br/><br/>
@@ -26,16 +35,41 @@
         },
         watch: {
             firstName(value){
+                /**
+                 * 执行流程：2秒之后定时器到点，到点之后调用普通函数，普通
+                 *  函数一调用，this输出。
+                 *  注意：定时器所指定的回调函数，是由JS引擎调用的
+                 */
+                // setTimeout(function() {
+                //     console.log(this)   // this指向Window
+                //     this.fullName = value + this.lastName
+                // }, 2000)
+
+                // 箭头函数
+                /**
+                 * 1）定时器所指定的函数到底是不是Vue所管理的函数？不是
+                 * 2）setTimeout()函数确实是在Vue所管理的一个函数，名字叫做
+                 *  firstName中调用的，但是定时器所指定的回调函数是不受Vue控
+                 *  制的，是浏览器定时器管理模块控制的，最后定时器到点了也是
+                 *  JS引擎调用的。
+                 * 3）执行流程：2秒之后定时器到点，到点之后调用回调函数，回调
+                 *  函数一调用，this输出
+                 * 注意：定时器所指定的回调函数，也是由JS引擎调用，但是呢，
+                 *  写成了一个箭头函数，然后就没有了自己的this，没有自己的
+                 *  this就往外找，往外找就找到了firstName的this
+                 */
                 setTimeout(()=>{
                     console.log(this)
                     this.fullName = value + this.lastName
-                })
+                }, 2000)
+
+                console.log("first name has been changed!!!")
             },
             lastName(value) {
                 setTimeout(() => {
                     console.log(this)
                     this.fullName = this.firstName + value
-                })
+                }, 3000)
             }
         }
     })

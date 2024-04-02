@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数使用</title>
+</head>
+<body>
+    <script>
+        /**
+         * 箭头函数中 this 的指向声明是 是所在作用域下的 this值
+         * 箭头函数时 不会改变this的指向
+         */
+        // 例子1
+        let func = () => {
+            console.log(this)   // 当前this表示的是Window
+        }
+        // func()
+        name = "江西工业职业技术学院"
+
+        // 例子2
+        let school = {
+            name: '南昌工学院',
+            getName: function () {
+                console.log(this.name)
+                console.log(this)   // 当前this指向的是school对象
+
+                let setName = () => {
+                    console.log(this.name)
+                    console.log(this)
+                }
+
+                setName()
+            },
+            getInfo: () => {
+                console.log(this.name)
+                console.log(this)   // 当前对象指向的是Window对象
+            }
+        }
+        school.getName()
+        school.getInfo()
+
+
+    </script>
+</body>
+</html>
