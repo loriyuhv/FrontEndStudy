@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数和原型的this指向</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let that
+        function Star(name) {
+            that = this
+            console.log(this)
+            this.name = name
+        }
+
+        // 原型对象里面的函数this指向的还是 实例对象 jerry
+        Star.prototype.sing = function () {
+            that = this
+            console.log('唱歌')
+        }
+
+        // 实例对象
+        // 构造函数的this就是 实例对象 jerry
+        let jerry = new Star('Jerry')
+        jerry.sing()
+        console.log(that === jerry)
+    </script>
+</body>
+</html>

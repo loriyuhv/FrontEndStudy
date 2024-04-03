@@ -5,19 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c22221b0-28c1-410c-a804-886ce2fec9da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/c_构造函数/综合案例.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day2/2.创建对象.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day2/3.自定义构造函数创建对象.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day2/4.基本包装类型.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WebApis/bEvent/1.事件监听.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WebApis/bEvent/2.环境对象.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WebApis/bEvent/3.回调函数.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WebApis/zImages/ava.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WebApis/zImages/star.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebApis/aDocument/3.操作元素内容.html" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApis/aDocument/3.操作元素内容.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day3/1.构造函数.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day3/2.构造函数和原型的this指向.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day3/3.数组扩展最大值和求和方法.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day3/4.constructor属性.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day3/5.对象原型.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frames/a_vue2_study/a_vue_basics/12_列表渲染/7.模拟一个数据检测.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frames/a_vue2_study/a_vue_basics/12_列表渲染/7.模拟一个数据检测.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c_构造函数/综合案例.html" beforeDir="false" afterPath="$PROJECT_DIR$/day2/综合案例.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,21 +37,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/Respositories/FrontEndStudy/FrontEnd/JavaScript进阶",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Respositories/FrontEndStudy/FrontEnd/JavaScript进阶&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Respositories\FrontEndStudy\FrontEnd\JavaScript进阶\day2" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -67,6 +67,7 @@
       <updated>1712092050310</updated>
       <workItem from="1712092051330" duration="4828000" />
       <workItem from="1712106475503" duration="7131000" />
+      <workItem from="1712181488078" duration="2666000" />
     </task>
     <servers />
   </component>

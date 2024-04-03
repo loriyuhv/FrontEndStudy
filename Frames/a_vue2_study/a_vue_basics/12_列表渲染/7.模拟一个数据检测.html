@@ -10,6 +10,29 @@
         {{address}}
     </div>
     <script type="text/javascript">
+        let data = {
+            name: '南昌工学院',
+            address: '南昌'
+        }
+        // 创建一个监视的实例对象，用于监视data中属性的变化
+        const obs = new Observer(data)
+        console.log(obs)
+        function Observer(obj) {
+            // 汇总对象所有的属性形成一个数组
+            const keys = Object.keys(obj)
+            // 遍历
+            keys.forEach((k) => {
+                Object.defineProperty(this, k, {
+                    get() {
+                        return obj[k]
+                    },
+                    set(val) {
+                        obj[k] = val
+                    }
+                })
+            })
+        }
+
         new Vue({
             el: '#demo',
             data: {

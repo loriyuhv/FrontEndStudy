@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>constructor属性</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function Star() {}
+        // console.log(Star.prototype)
+
+        Star.prototype = {
+            // 重新指回创造这个原型对象的构造函数
+            constructor: Star,
+            sing: function () {
+                console.log('sing')
+            },
+            dance: function () {
+                console.log('dance')
+            }
+        }
+        // console.log(Star.prototype)
+        // console.log(Star.prototype.constructor)
+
+        // console.log(Star.prototype.constructor === Star)
+        let ldh = new Star.prototype.constructor()
+        ldh.sing()
+        ldh.dance()
+    </script>
+</body>
+</html>
