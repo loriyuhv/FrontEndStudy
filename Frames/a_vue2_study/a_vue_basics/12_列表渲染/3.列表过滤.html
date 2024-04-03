@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表过滤</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <style>
+        * {
+            margin: 0;
+        }
+        div {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <h2>人员列表</h2>
+        <label>
+            <input type="text" placeholder="请输入名字" v-model="keyWord">
+        </label>
+        <ul>
+            <li v-for="person in filterPersons" :key="person.id">
+                {{person.name}}-{{person.age}}-{{person.sex}}
+            </li>
+        </ul>
+
+    </div>
+
+    <script type="text/javascript">
+        // 用watch实现
+        // const v = new Vue({
+        //     el: '#root',
+        //     data: {
+        //         keyWord: '',
+        //         persons: [
+        //             {id: '001', name: '马冬梅', age: 18, sex: '女'},
+        //             {id: '002', name: '江明东', age: 19, sex: '男'},
+        //             {id: '003', name: '周杰伦', age: 20, sex: '男'},
+        //             {id: '004', name: '温小宝', age: 21, sex: '男'},
+        //         ],
+        //         filterPersons: [],
+        //     },
+        //     watch: {
+        //         keyWord: {
+        //             immediate: true,
+        //             handler(val) {
+        //                 // console.log('keyWord被修改了', val)
+        //                 this.filterPersons = this.persons.filter((p) =>{
+        //                     return p.name.indexOf(val) !== -1
+        //                 })
+        //             }
+        //         }
+        //     }
+        // })
+
+        // 用computed实现
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                persons: [
+                    {id: '001', name: '马冬梅', age: 18, sex: '女'},
+                    {id: '002', name: '江明东', age: 19, sex: '男'},
+                    {id: '003', name: '周杰伦', age: 20, sex: '男'},
+                    {id: '004', name: '温小宝', age: 21, sex: '男'},
+                ],
+                keyWord: '',
+                // filterPersons: [],
+            },
+            computed: {
+                filterPersons: {
+                    get() {
+                        return this.persons.filter((p) => {
+                            return p.name.indexOf(this.keyWord) !== -1
+                        })
+                    },
+                }
+            }
+        })
+    </script>
+</body>
+</html>
