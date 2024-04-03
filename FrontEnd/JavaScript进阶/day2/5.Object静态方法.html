@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object静态方法</title>
+</head>
+<body>
+    <script type="text/javascript">
+        const obj = new Object({name: 'Jerry', age: 18})
+        // 1.获得所有的属性名
+        const obj_keys = Object.keys(obj)
+        console.log(obj_keys)
+        // 2. 获得所有的属性值
+        const obj_values = Object.values(obj)
+        console.log(obj_values)
+
+        // 3. 对象的拷贝
+        const student = {}
+        Object.assign(student, obj)
+        console.log(student)
+        const jerry = {studentId: '22013040216'}
+        Object.assign(jerry, student)
+        console.log(jerry)
+    </script>
+</body>
+</html>

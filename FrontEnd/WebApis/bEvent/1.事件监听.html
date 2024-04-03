@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件监听</title>
+</head>
+<body>
+    <h3>事件监听</h3>
+    <p id="text">为 DOM 元素添加事件监听，等待事件发生，便立即执行一个函数。</p>
+    <button id="btn">点击改变文字颜色</button>
+
+    <script type="text/javascript">
+        // 1. 获取 button 对应的 DOM 对象
+        let btn = document.getElementById('btn');
+
+        // 2. 添加事件监听
+        btn.addEventListener('click', function(){
+            // console.log(this);
+            console.log("等待事件触发");
+            // 改变 p 标签的文字颜色
+            let text = document.getElementById("text");
+            text.style.color = 'red';
+        })
+        // btn.addEventListener('click', () => document.getElementById('text').style.color = 'red')
+        // 3. 只要用户点击了按钮，事件便触发了！！！
+    </script>
+</body>
+</html>

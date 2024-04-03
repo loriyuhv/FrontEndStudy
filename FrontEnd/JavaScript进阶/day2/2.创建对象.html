@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建对象</title>
+</head>
+<body>
+<script>
+    // 1. 利用字面量创建对象
+    const jerry = {
+        name: "Jerry"
+    }
+    console.log(jerry)
+
+    // 2. 利用 new Object 创建对象
+    const tom = new Object({name: "Tom"})
+    console.log(tom)
+
+    // 3. 利用构造函数创建对象
+    function Star(name, age) {
+        this.name = name
+        this.age = age
+    }
+    const alan = new Star("Alan", 18)
+    console.log(alan)
+
+    for(let k in alan) {
+        console.log(k)
+        console.log(alan[k])
+    }
+</script>
+</body>
+</html>

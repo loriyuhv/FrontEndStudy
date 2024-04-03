@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c22221b0-28c1-410c-a804-886ce2fec9da" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/c_构造函数/综合案例.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day2/2.创建对象.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day2/3.自定义构造函数创建对象.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day2/4.基本包装类型.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WebApis/bEvent/1.事件监听.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WebApis/bEvent/2.环境对象.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WebApis/bEvent/3.回调函数.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WebApis/zImages/ava.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WebApis/zImages/star.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebApis/aDocument/3.操作元素内容.html" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApis/aDocument/3.操作元素内容.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2eYqqZAEccR7GcCOTBmaBvzF501" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "F:/Respositories/FrontEndStudy/FrontEnd/JavaScript进阶",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c22221b0-28c1-410c-a804-886ce2fec9da" name="Changes" comment="" />
+      <created>1712092050310</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712092050310</updated>
+      <workItem from="1712092051330" duration="4828000" />
+      <workItem from="1712106475503" duration="7131000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

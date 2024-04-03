@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>操作元素内容</title>
+    <style>
+        *{
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="introduce">
         <h1>王师维</h1>
         我想陪你去远方！！！
+    </div>
+    <div class="images" style="width: 500px; height: 300px; background-color: antiquewhite">
+        <img id="countryside" style="height: 200px; width: auto" src="../zImages/ava.png" alt="乡村振兴">
     </div>
 
     <script type="text/javascript">
@@ -17,6 +25,25 @@
 
         // 2. `innerHTML` 将文本内容添加/更新到任意标签位置，文本中包含的标签会被解析。
         element.innerHTML = "<h1>王师维</h1>我想改变自己！！！";
+        /**
+         * 总结：如果文本内容中包含 `html` 标签时推荐使用 `innerHTML`，
+         *  否则建议使用 `innerText` 属性。
+         */
+
+
+        /**常用属性修改*/
+        // 1. 获取img对应的DOM元素
+        let countryside = document.getElementById('countryside');
+        // 2. 修改元素属性
+        countryside.src = '../zImages/star.png';
+
+        /**控制属性修改*/
+        let images = document.querySelector('.images');
+        // css 属性的 - 连接符与 JavaScript 的 减运算符
+        // 冲突，所以要改成驼峰法
+        countryside.style.height = '100px';
+        images.style.backgroundColor = 'pink';
+
 
     </script>
 </body>
