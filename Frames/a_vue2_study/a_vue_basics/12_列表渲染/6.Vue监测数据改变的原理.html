@@ -14,11 +14,24 @@
     </div>
 
     <script type="text/javascript">
-        new Vue({
+        const vm = new Vue({
             el: '#demo',
             data: {
                 name: '南昌工学院',
-                address: '江西省南昌市'
+                address: '江西省南昌市',
+                students: {
+                    name: 'Tom',
+                    age: {
+                        realAge: 40,
+                        falseAge: 18
+                    },
+                    friends: [
+                        {
+                            name: 'Jerry',
+                            age: 18
+                        }
+                    ]
+                }
             }
         })
     </script>

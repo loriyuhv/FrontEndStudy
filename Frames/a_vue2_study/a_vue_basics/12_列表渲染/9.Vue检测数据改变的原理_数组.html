@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue检测数据改变的原理_数组</title>
+  <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="demo">
+    <h2>学校信息</h2>
+    <h3>学校名称：{{school.name}}</h3>
+    <h3>学校地址：{{school.address}}</h3>
+    <h3>学校校长：{{school.leader}}</h3>
+    <hr/>
+    <h2>学生信息</h2>
+    <button @click="addSex">添加一个性别属性，默认值是男</button>
+    <h3>学生姓名：{{student.name}}</h3>
+    <h3 v-if="student.sex">学生性别：{{students.sex}}</h3>
+    <h3>学生年龄：真实：{{student.age.realAge}} 对外：{{student.age.falseAge}}</h3>
+    <h3>朋友列表：</h3>
+    <ul>
+      <li v-for="friend in student.friends" :key="friend.studentId">
+        {{friend.name}}--{{friend.age}}
+      </li>
+    </ul>
+    <h3>爱好列表：</h3>
+    <ul>
+      <li v-for="(h, index) in student.hobby" :key="index">
+        {{h}}
+      </li>
+    </ul>
+  </div>
+
+  <script type="text/javascript">
+    const vm = new Vue({
+      el: '#demo',
+      data: {
+        school: {
+          name: '南昌工学院',
+          address: '江西省南昌市',
+        },
+        student: {
+          studentId: '001',
+          name: 'Tom',
+          age: {
+            realAge: 40,
+            falseAge: 18
+          },
+          friends: [
+            {
+              studentId: '002',
+              name: 'Jerry',
+              age: 18
+            },
+            {
+              studentId: '004',
+              name: 'Alice',
+              age: 19
+            },
+            {
+              studentId: '003',
+              name: 'Edward',
+              age: 20
+            }
+          ],
+          hobby: ['smoking', 'running', 'coding']
+        }
+      },
+      methods: {
+        addSex() {
+          Vue.set(this.student, 'sex', '男')
+        }
+      }
+    })
+  </script>
+</body>
+</html>

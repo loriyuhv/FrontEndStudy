@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/dayjs/1.11.9/dayjs.min.js"></script>
+</head>
+<body>
+    <div id="demo">
+        <h3>显示格式化后的时间</h3>
+        <h3>现在是：{{time}}</h3>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#demo',
+            data: {
+                time: 1712215604447,
+            },
+
+        })
+    </script>
+</body>
+</html>
