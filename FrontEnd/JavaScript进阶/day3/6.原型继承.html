@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型继承</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // 继续抽取   公共的部分放到原型上
+        // const student1 = {
+        //     studentId: '22013040214',
+        //     studentName: '江明东'
+        // }
+        // const student2 = {
+        //     studentId: '22013040216',
+        //     studentName: '王师维'
+        // }
+        // const student3 = new student1.__proto__.constructor()
+        // student3.studentId = '22013040203'
+        // student3.studentName = '宋思微'
+        // console.log(student1)
+        // console.log(student2)
+        // console.log(student3)
+
+        // 构造函数  new 出来的对象 结构一样，但是对象不一样
+        function Student(studentId, studentName) {
+            this.studentId = studentId
+            this.studentName = studentName
+        }
+        // const student1 = new Student('22013040214', '江明东')
+        // const student2 = new Student('22013040216', '王师维')
+        // const student3 = new Student('22013040203', '宋思微')
+        // console.log(student1)
+        // console.log(student2)
+        // console.log(student3)
+
+        // 女学生  构造函数   继承  想要 继承 Person
+        function Woman() {
+
+        }
+
+        // Woman 通过原型来继承 Person
+        // 父构造函数（父类）   子构造函数（子类）
+        // 子类的原型 =  new 父类
+        Woman.prototype = new Student()
+        // 指回原来的构造函数
+        Woman.prototype.constructor = Woman
+        // 给女人添加一个方法  生孩子
+        Woman.prototype.baby = function () {
+            console.log('宝贝')
+        }
+
+        const alice = new Woman()
+        console.log(alice)
+
+        // 男人 构造函数  继承  想要 继承 Student
+        function Man() {
+
+        }
+        // 通过 原型继承 Student
+        Man.prototype = new Student()
+        Man.prototype.constructor = Man
+        const jerry = new Man()
+        console.log(jerry)
+    </script>
+</body>
+</html>
