@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>回顾一个DOM操作</title>
+  <script type="text/javascript" src="../js/vue.js"></script>
+  <style>
+    .demo {
+      background-color: skyblue;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">创建一个输入框</button> 
+  <script type="text/javascript">
+    const btn = document.getElementById('btn')
+    btn.onclick = ()=>{
+      const input = document.createElement('input')
+      input.className = 'demo'
+      input.value = 99
+      input.onclick = () => {
+        alert("Hello world")
+      }
+
+      document.body.appendChild(input)
+
+      input.focus()
+      input.parentElement.style.backgroundColor = 'purple'
+      console.log(input.parentElement);
+    }
+  </script>
+
+  
+</body>
+</html>
