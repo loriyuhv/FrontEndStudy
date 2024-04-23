@@ -1,0 +1,7 @@
+// 配置package.json命令
+npm init -y
+
+// 安装包
+npm install moment
+
+package.json会出现dependencies节点，专门用来记录使用npm install命令安装了哪些包
