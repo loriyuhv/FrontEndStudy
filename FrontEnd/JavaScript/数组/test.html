@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>数组索引方法</title>
+    <script>
+        let arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        let newArr = [];
+        arr.forEach(element => {
+            return element >= 10 ? newArr.push(element) : undefined;
+        })
+        console.log(newArr);
+
+        let arr2 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        let newArr2 = [];
+        arr2.forEach(element => {
+            return element ? newArr2.push(element) : undefined;
+        })
+        console.log(newArr2);
+
+        // 删除newArr2第2个位置后三位数
+        newArr2.splice(2, 3);
+        console.log(newArr2);
+    </script>
 </head>
 <body>
-<script>
-    
-</script>
+
 </body>
 </html>

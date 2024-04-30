@@ -6,46 +6,71 @@
     <script>
         /*
         * 两类：
-        *   简单数据类型：Number, String, Boolean, Undefined, Null;
+        *   简单数据类型：number, string, boolean, undefined, null;
         *   复杂数据类型：object
         * */
 
         // 1. number 数字类型
-        var num = 10; // num数字型
-        // console.log(typeof num)
-        // console.log("num：", num)
-        /*进制
-        // 1. 八进制，0~7我们程序里面数字前面加0表示8进制
-        var num1 = 010;
-        console.log(num1);
-        // 2. 十六进制 数字的前面加0x表示十六进制
-        var num2 = 0xa;
-        console.log(num2);
-         */
+        // var num = 10; // num 数字型
+        // console.log(typeof num);
+        // console.log("num：", num);
+
+        // 补充：进制
+        // 1) 八进制，0~7我们程序里面数字前面加0表示8进制
+        // var octalNum = 010; // ES5及以前版本中，这会被解析为八进制数，等同于十进制的8
+        // console.log(octalNum);
+
+        /* 这种表示方法在ES6（ECMAScript 2015）中被废弃，并在ES2021中被彻底移除。
+        现在，所有的数字字面量默认都是十进制的。如果你想要表示八进制数，你应该
+        使用字符串或者使用 parseInt 函数并指定基数。 */
+        // var octalNum2 = 0o10;
+        // console.log(octalNum2);
+
+        // parseInt()
+        // var octalNum1 = parseInt(10, 8)
+        // console.log(octalNum1);
+
+        // 2) 十六进制 数字的前面加0x表示十六进制
+        // var decimalNum = 0xa;
+        // console.log(decimalNum);
 
         // Infinity 代表无穷大
         // -Infinity 代表无穷小
         // NaN 非数值
-        // isNaN()这个方法用来判断非数字 并且返回一个值，如果是数字返回的是false如果不是数字返回true
-        // var name = "walker";
+        // isNaN()这个方法用来判断非数字 并且返回一个值，
+            // 如果是数字返回的是false；如果不是数字返回true
+        // var name = 'Jerry';
         // console.log(isNaN(name));
+        // var age = 18;
+        // console.log(isNaN(age));
 
         //2. string 字符串类型
 
         // 1) 检测获取字符串的长度 length
-        var str = "loriyuhv";
-        // console.log(str.length);
+        // var username = 'Jerry';
+        // console.log(username.length);
+
         // 2) 字符串拼接，只要有字符串和其他类型相拼接，最终的结果是字符串类型。
-        var answer = "I am " + 18;
+        // var answer = "I am " + 18;
         // console.log(answer);
-        // console.log(typeof answer)
+        // console.log(typeof answer);
+        // console.log(typeof answer);
+
+        // 补充：模板字符串
+        /**
+         * 使用场景：拼接字符串和变量
+         * 
+        */
+        // let username = 'Jerry';
+        // let age = 18;
+        // ``反引号包裹
+        // alert(`I am ${username}, my age is ${age} this year.`)
 
         //3. boolean 布尔类型
-
         //注意：只能有两个值true和false
         var flag = true; //flag 布尔型
         // var value = flag + 1; //true 参与加法运算当1来看 false当0看
-        // console.log(value)         // 输出：2
+        // console.log(value);         // 输出：2
         // console.log(typeof value); // 输出：number
 
         // 检测数据类型
@@ -84,16 +109,20 @@
         // console.log(typeof value1);
 
         // 4. 数组
-
         // 1) 创建数组
         var arr = [1, 2, 3, 4, 5];
         // 2） 利用new创建数组
         var arr1 = new Array(); //创建了一个空的数组
         var cars = new Array("car", "track", "bike")
         // 3） 利用数组字面量创建数组[]
-        var arr2 = []; //创建了一个空的数组
+        var arr2 = []; // 创建了一个空的数组
         // console.log(cars);
         // console.log(arr);
+        console.log(arr2 === undefined) // false
+        console.log(arr2 === null); // false
+        let arr3 = null;
+        console.log(arr3 === undefined) // false
+        console.log(arr3 === null); // true
 
         // 数组新增元素
         // 1. 第一种
@@ -103,14 +132,17 @@
         names[a+0] = "王师维";
         names[a+1] = "李嘉竣";
         // console.log(names);
+        // console.log(names[0]);
+        // console.log(names[1]);
+        // console.log(names[2]);
 
         // 2. 第二种
-        var colours = ['red', 'purple', 'pink', 'green'];
-        colours[4] = 'black';
-        // console.log(colours);
-        // console.log(colours[4]);
-        // for (var i=0; i<colours.length; i++) {
-        //     document.write(colours[i] + "<br>");
+        var colors = ['red', 'purple', 'pink', 'green'];
+        colors[4] = 'black';
+        // console.log(colors);
+        // console.log(colors[4]);
+        // for (var i = 0; i < colors.length; i++) {
+        //     console.log(colors[i]);
         // }
 
         // JavaScript 对象

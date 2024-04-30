@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运算符</title>
+    <script>
+        // 注意：在计算失败时，显示的结果时NaN（not a number)
+        let username = 'Jerry';
+        // console.log(username + 5);
+
+        // 1. 一元运算符
+        // 1）++ 递增运算符
+        let number1 = 1
+        // console.log(++number);
+        // 2）-- 递减运算符
+        let number2 = 1
+        // console.log(--number2);
+        // 3）! 逻辑非运算符
+        let number3 = 1
+        // console.log(!number3);
+        // 4） ~ 按位非运算符：对操作数进行按位取反操作。
+        let number4 = 5;    // 0000 0101 
+        // console.log(~number4);
+        let number5 = -27;       
+        // 1111 1111 111 1 1011  // 原码 16+8+2+1
+        // 1111 1111 111 0 0100  // 反码 按位取反
+        // 1111 1111 111 0 0101  // 补码 +1
+        // ~按位非运算符：对其补码进行取反  // 注意：正数的原码与反码和补码相同
+        // 0000 0000 000 1 1010  // ~-72
+        // 0000 0000 000 1 1010  // 反码
+        // 0000 0000 000 1 1010  // 原码     16 + 8 + 2
+        // console.log(~number5);
+
+        // 5）运算符(+): 将操作数转换为其数值表示。
+        let number6 = '5';
+        // console.log(+number6);
+
+        // 6）减运算符 (-): 将操作数转换为数值，并取其相反数。
+        let number7 = '5';
+        // console.log(-number7);
+
+        // 7）类型转换运算符 (typeof): 返回操作数的类型。
+        let number8 = 8;
+        let number9 = typeof number8;
+        // console.log(number9);
+        let number10 = typeof 1;
+        // console.log(number10);
+        let str = typeof ''
+        // console.log(str);
+
+        // 8）删除运算符 (delete): 从对象中删除属性。
+        let student = {
+            name: 'Jerry',
+            age: 18,
+            other: ''
+        }
+        // console.log('删除前:');
+        // console.log(student);
+        delete student.other;
+        // console.log('删除后:');
+        // console.log(student);
+        // 9) 扩展运算符 (...): 在ES6中，用于数组和对象字面量中进行展开。
+        // let displayHobby = function(studentName, ...args) {
+            // console.log(studentName + "'s hobby is:");
+            // for (let i = 0; i < args.length; i++) {
+            //     console.log(args[i]);
+            // }
+            // args.forEach(element => {
+            //     console.log(element);
+            // });
+        //     return;
+        // }
+        // displayHobby('Jerry', 'reading', 'running', 'eating');
+
+        // 补充：前置自增与后置自增区别
+        // 前置自增：先加1，再操作
+        // 后置自增：先操作，再加1
+        // 面试题
+        let number = 2;
+        
+        // number++: 2 ==> number 2
+        // ++number: 3 ==> number 3
+        // 2 + 4 + 4 = 10
+        // console.log(number++ + ++number + number);
+        /**
+         * 分析：
+         * ++运算符优先级比+运算符要高
+         * 1) number++: 先取操作数2到表达式，然后number+1，此时number=3
+         * 2）++number：先number+1=4，然后去操作数为4
+         * 3）number：取出number为4
+        */
+        
+        // switch语句
+        let hobby = prompt("请输入爱好！")
+        switch(hobby) {
+            case '阅读':
+                console.log('您的爱好是' + hobby + '，阅读使人自强不息。');
+                break;
+            default:
+                console.log('你这爱好不太好哦！！！');
+                break;
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
