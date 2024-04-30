@@ -5,7 +5,7 @@
     <title>获取DOM对象</title>
 </head>
 <body>
-    <h3>查找元素类型节点</h3>
+    <h3 id="element">查找元素类型节点</h3>
     <p>从整个 DOM 树中查找 DOM 节点是学习 DOM 的第一个步骤。</p>
     <p>我要去远方</p>
     <ul>
@@ -15,17 +15,43 @@
         <li>元素4</li>
     </ul>
 
+    <div id="#container">
+        <div id="header">旅游计划</div>
+        <div id="main">
+            <p class="w">
+                我要去远方！！！
+            </p>
+            <p class="w">
+                诗和远方，我该如何选！！！
+            </p>
+        </div>
+    </div>
+
     <script type="text/javascript">
         /**
          * 1. querySelector   满足条件的第一个元素
          * 2. querySelectorAll  满足条件的元素集合 返回伪数组
          */
         // 1.获取第一个p元素
-        let p = document.querySelector('p')
-        console.log(p)
+        // let p = document.querySelector('p')
+        // console.log(p)
         // 2.获取第一个li元素
-        let li = document.querySelector('li')
-        console.log(li)
+        // let li = document.querySelector('li')
+        // console.log(li)
+
+        // 其他获取元素的方式
+        // 1. 根据id获取第一个元素
+        // const element = document.getElementById('element');
+        // element.outerHTML = '<h1>Hello World!!!</h1>'
+        // console.log(element);
+
+        // 2. 根据标签获取一类元素 获取页面所有的div
+        // const div = document.getElementsByTagName('div');
+        // console.log(div);
+        
+        // 3. 根据类名获取元素 获取页面 所有类名为w的
+        const w = document.getElementsByClassName('w');
+        console.log(w);
     </script>
 </body>
 </html>
