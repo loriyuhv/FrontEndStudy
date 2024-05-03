@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Window</title>
+  </head>
+  <body>
+    <h2>Hello world!</h2>
+    <script>
+      // JavaScript内置了一个用来让代码延迟执行的函数，叫setTimeout(延迟函数)
+      // 语法：setTimeout(回调函数, 等待的毫秒数);
+
+      
+      // window.setTimeout(
+      //   () => {
+      //     console.log(this);
+      //     const h = document.querySelector('h2');
+      //     h.outerText = 'Hello vue!!!';
+      //   }, 3000
+      // )
+
+      // 清除延迟函数
+      // let timer = setTimeout(回调函数, 等待的毫秒数);
+      // clearTimeout(timer)
+
+      const timer = window.setTimeout(() => {
+        const h = document.querySelector('h2');
+        h.outerHTML = '<h1>Hello vue!!!</h1>';
+      }, 2000);
+      // clearTimeout(timer);
+      console.log(timer);
+    </script>
+  </body>
+</html>

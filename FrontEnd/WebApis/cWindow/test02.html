@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Window</title>
+  </head>
+  <body>
+    <h2>用户：<span>Tom</span></h2>
+    <button>获取本地用户名称</button>
+    <script>
+      const button = document.querySelector('button');
+      button.addEventListener('click', () => {
+        const span = document.querySelector('span');
+        span.innerText = localStorage.getItem('username');
+      })
+    </script>
+  </body>
+</html>

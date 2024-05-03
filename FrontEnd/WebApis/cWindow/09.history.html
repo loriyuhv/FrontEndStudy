@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Window</title>
+  </head>
+  <body>
+    <a href="#/friend">朋友</a>
+    <a href="#/hobby">爱好</a>
+    <a href="#/delicious">美食</a><br/><br/>
+    <button>前进</button>
+    <button>后退</button>
+    <script>
+      // history的数据类型是对象，主要管理历史记录，该对象与浏览器地址栏的操作相对应，
+      //  如前进、后退、历史记录等
+      // 对象方法
+      // back() 可以后退功能
+      // forward() 前进功能
+      // go(参数) 前进后退功能  参数如果是正数n 前进n个页面 负数n，后退n个页面。
+      const buttons = document.querySelectorAll('button');
+      // console.log(buttons);
+      
+      buttons[0].addEventListener('click', function() {
+        // 前进一步
+        // history.forward();
+        history.go(1);
+      })
+      
+      buttons[1].addEventListener('click', function() {
+        // 后退一步
+        // history.back();
+        history.go(-1);
+      })
+
+      console.log(location.hash);
+    </script>
+  </body>
+</html>

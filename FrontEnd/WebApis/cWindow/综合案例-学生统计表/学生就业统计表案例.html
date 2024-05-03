@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>学生就业统计表</title>
+    <link rel="stylesheet" href="./css/index.css">
+  </head>
+  <body>
+    <h1>学生就业统计表</h1>
+    
+    <form class="info" autocomplete="off">
+      <input type="text" class="username" name="username" placeholder="姓名">
+      <input type="text" class="age" name="age" placeholder="年龄">
+      <input type="text" class="salary" name="salary" placeholder="薪资">
+      <select name="gender" class="gender">
+        <option value="男">男</option>
+        <option value="女">女</option>
+      </select>
+      <select name="city" class="city">
+        <option value="北京">北京</option>
+        <option value="上海">上海</option>
+        <option value="广州">广州</option>
+        <option value="深圳">深圳</option>
+        <option value="南昌">南昌</option>
+      </select>
+      <button class="add"><i class="iconfont iconfont-add"></i>添加</button>
+    </form>
+
+    <div class="title">共有数据<span>0</span>条</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>姓名</th>
+          <th>年龄</th>
+          <th>性别</th>
+          <th>薪资</th>
+          <th>薪资就业城市</th>
+          <th>录入时间</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>江明东</td>
+          <td>18</td>
+          <td>男</td>
+          <td>6200</td>
+          <td>南昌</td>
+          <td>2024/12/05 12:03:01</td>
+          <td>
+            <a href="javascript:">
+              <i class="iconfont iconfont-delete"></i>
+              删除
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <script>
+      // 参考数据
+      const initData = [
+        {
+          stuId: '1',
+          username: '王师维',
+          age: 18,
+          gender: '男',
+          salary: '1400',
+          city: '南昌',
+          time: '2022/9/1 08:08:23'
+        }
+      ]
+      
+      // localStorage.setItem('data', JSON.stringify(initData));
+      // 1. 渲染业务
+      // 1.1 先读取本地存储的数据
+      // 1）本地存储有数据则记得转换为对象，然后存储到变量里面，后期用于渲染页面。
+      // 2）如果没有数据，则用空数组来代替。
+      const students = JSON.parse(localStorage.getItem('data')) || [];
+      console.log(students);
+    </script>
+  </body>
+</html>

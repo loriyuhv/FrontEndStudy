@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #721c24;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin: 20px 0;
+}
+
+.title {
+  width: 933px;
+  height: 50px;
+  line-height: 50px;
+  padding-right: 15px; 
+}

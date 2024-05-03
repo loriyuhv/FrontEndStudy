@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Window</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="username">用户名称 
+        <input type="text" name="username"><br>
+      </label>
+      <label for="password">用户密码 
+        <input type="password" name="pwd"><br>
+      </label>
+      <button>提交</button>
+    </form>
+
+    <a href="#/my">我的</a>
+    <a href="#/friend">关注</a>
+    <a href="#/download">下载</a>
+    <button class="reload">刷新</button>
+    <script>
+      // console.log(window.location);
+      // console.log(location);
+
+      // console.log(location.href);
+      // 1. href属性：经常用href 利用js的方法去跳转页面。
+      // location.href = 'http://www.baidu.com'
+
+      // 2. search属性  查询url？后面的值
+      // console.log(location.search);
+
+      // 3. hash属性 查询url#后面的值
+      // console.log(location.hash);
+
+      // 4. reload()方法 刷新当前页面
+
+      const reload = document.querySelector('.reload');
+      reload.addEventListener('click', function() {
+        // F5刷新 
+        // location.reload();
+        // true: Ctrl + F5 强制刷新
+        location.reload(true);
+      })
+    </script>
+  </body>
+</html>

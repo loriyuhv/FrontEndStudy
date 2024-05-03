@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Window</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="username">
+        用户账户：<input type="text" name="username" value=""><br>
+      </label>
+      <label for="password">
+        用户密码：<input type="password" name="password" value=""><br>
+      </label>
+      <button>提交</button>
+    </form>
+
+    <script>
+      // 存储数据; 存储用户名
+      localStorage.setItem('username', 'Jerry');
+      const input = document.querySelector('input');
+      input.value = localStorage.getItem('username');
+
+      // 读取数据：读取用户名
+      // const username = localStorage.getItem('username');
+      // console.log(username);
+
+      // 删除数据：删除用户名
+      // localStorage.removeItem('username');
+
+      // 修改数据，有键，就是改，否则就是增加
+      localStorage.setItem('username', 'Jerry');
+      
+      // 存取年龄
+      // 本地存储只能存储字符串数据类型
+      localStorage.setItem('age', 18);
+      let age = localStorage.getItem('age');
+      console.log(age);
+      console.log(typeof age);
+      age = parseInt(age);
+      console.log(age);
+      console.log(typeof age);
+
+    </script>
+  </body>
+</html>

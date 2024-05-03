@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Window</title>
+    <style>
+      img{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./avatar/3.jpg" alt="">
+    <script>
+      setTimeout(() => {
+        const img = document.querySelector('img');
+        img.style.display = 'none';        
+      }, 5000);
+    </script>
+  </body>
+</html>
