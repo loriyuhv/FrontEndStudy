@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+    <button onclick="result()">点击</button>
+    <script type="text/javascript">
+        // function outer() {
+        //   let i = 1;
+        //   // console.log('outer!!!');
+        //   function fn() {
+        //     console.log(i);
+        //   }
+        //   return fn;
+        // }
+
+        // const fun = outer();
+        // fun();
+
+        // 闭包应用
+
+        function fn() {
+          let count = 0;
+          function fun() {
+            count += 1;
+            console.log(`函数被调用${count}次了。`);
+          }
+          return fun;
+        }
+
+        const result = fn();
+    </script>
+</body>
+</html>

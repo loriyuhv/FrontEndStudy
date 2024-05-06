@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>员工涨薪计算成本</title>
+</head>
+<body>
+    <script type="text/javascript">
+        const employee = [
+          {
+            name: 'Jerry',
+            salary: 3000,
+          },
+          {
+            name: 'Tom',
+            salary: 4000,
+          }
+        ];
+
+        const total = employee.reduce((prev, item) => {
+          return prev += item.salary * 0.3;
+        }, 0);
+        console.log(total);
+    </script>
+</body>
+</html>

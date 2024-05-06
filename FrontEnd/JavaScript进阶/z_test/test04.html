@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数使用</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function Student(stuId, name) {
+          // 实例成员：方法
+          this.stuId = stuId;
+          this.name = name;
+
+          // 实例成员：方法
+          this.display = function() {
+            console.log(`I am ${name}, my student id is ${stuId}.`);
+          }
+        }
+
+        // 静态成员：属性
+        Student.schoolAddress = 'Nanchang';
+        // 静态成员：方法
+        Student.register = function () {
+          console.log('注册学籍流程...');
+        };
+
+
+        // 实例对象
+        const jerry = new Student('20197360', 'Jerry');
+        const tom = new Student('20197382', 'Tom');
+
+        // jerry.display();
+        // tom.display();
+
+        // jerry.register;
+        // console.log(`The address of Jerry'school is ${jerry.schoolAddress}.`);
+
+        // tom.register;
+        // console.log(`The address of Tom'school is ${jerry.schoolAddress}.`);
+
+        const properties = Object.keys(jerry);
+        console.log(properties);
+        const values = Object.values(jerry);
+        console.log(values);
+
+        const alice = Object.assign(jerry);
+        alice.display();
+    </script>
+</body>
+</html>

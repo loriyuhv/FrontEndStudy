@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组扩展</title>
+</head>
+<body>
+    <script type="text/javascript">
+        Array.prototype.max = function () {
+          // this 指向方法的调用者，也就是 数组[1, 2, 3]
+          return Math.max(...this);
+        }
+
+        Array.prototype.sum = function () {
+          // return this.reduce((prev, currentValue) => {
+          //   return prev + currentValue;
+          // }, 0)
+          return this.reduce((prev, currentValue) => prev + currentValue, 0);
+        }
+
+        console.log([1, 2, 3].max());
+        console.log([1, 2, 3].sum());
+    </script>
+</body>
+</html>

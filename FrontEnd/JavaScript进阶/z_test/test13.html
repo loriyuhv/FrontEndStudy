@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深浅拷贝</title>
+</head>
+<body>
+    <script type="text/javascript">
+      // 1. 浅拷贝
+      // 1.1 展开运算符
+      // const obj = {
+      //   name: 'Jerry'
+      // };
+
+      // const obj2 = {...obj};
+      // console.log(obj2);
+      // obj2.name = 'Tom';
+      // console.log(obj2);
+      // console.log(obj);
+
+      // 1.2 assign()
+      // const jerry = {name: 'Jerry'};
+      // const tom = {}
+      // Object.assign(tom, jerry);
+      // console.log(tom);
+      // tom.name = 'Tom';
+      // console.log(tom);
+      // console.log(jerry);
+
+      const jerry = {
+        name: 'Jerry',
+        age: 18,
+        mother: {
+          name: 'Alice',
+          age: 42,
+        }
+      }
+
+      // const tom = {}
+      // Object.assign(tom, jerry)
+      // // console.log(tom)
+      // tom.mother.name = 'Lili'
+      // tom.name = 'Tom'
+      // console.log(tom)
+      // console.log(jerry)
+
+      // const tom = jerry;
+      // tom.name = 'Tom'
+      // tom.mother.name = 'Lili'
+      // console.log(tom);
+      // console.log(jerry)
+
+      // const tom = _.cloneDeep(jerry);
+      const tom = JSON.parse(JSON.stringify(jerry))
+      console.log(tom)
+      tom.name = 'Tom'
+      tom.mother.name = 'Lili'
+      console.log(tom);
+      console.log(jerry);
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数this指向</title>
+</head>
+<body>
+    <script type="text/javascript">
+      // console.log(this);
+
+      function User(name, age){
+        this.name = name
+        this.age = age
+        this.say = function () {
+          console.log(this)
+          console.log('say!')
+        }
+        this.hello = () => {
+          console.log(this);
+          console.log('hello');
+        }
+      }
+      const jerry = new User('Jerry', 18)
+      // jerry.say()
+      // jerry.hello()
+
+      const student = {
+        stuId: '2019',
+        name: 'Jerry',
+        say: function() {
+          console.log(this);
+        },
+        hello: () => {
+          console.log(this);
+        }
+      }
+
+      // student.say();
+      // student.hello()
+
+      User.prototype.hello2 = () => {
+        console.log(this);
+      }
+      // User.prototype.hello();
+
+      jerry.hello2();
+
+    </script>
+</body>
+</html>

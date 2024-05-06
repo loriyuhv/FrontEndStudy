@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节流素材</title>
+    <style>
+      .box {
+        width: 500px;
+        height: 500px;
+        background-color: #ccc;
+        color: #fff;
+        text-align: center;
+        font-size: 100px;
+      }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script type="text/javascript">
+        const box = document.querySelector('.box')
+        let i = 0;
+
+        function mouseMove() {
+          box.innerHTML = ++i;
+        }
+
+        // 节流函数
+        function throttle(fn, t) {
+          // 起始时间
+          let startTime = 0;
+          return function () {
+            console.log(startTime);
+            // 得到当前的时间
+            let now = Date.now();
+            // 判断如果大于等于500采取调用函数
+            if (now - startTime >= t) {
+              fn()
+              startTime = now;
+            }
+          }
+        }
+
+        function debounce(fn, t) {
+          let timeId;
+          return function () {
+            // 如果有定时器，先清除
+            if (timeId !== undefined) clearTimeout(timeId)
+            // 开启定时器
+            timeId = setTimeout(function() {
+              fn()
+            }, t)
+          }
+        }
+
+        // box.addEventListener('mousemove', throttle(mouseMove, 500));
+        box.addEventListener('mousemove', debounce(mouseMove, 500));
+    </script>
+</body>
+</html>

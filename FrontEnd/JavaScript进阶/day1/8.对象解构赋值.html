@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象解构赋值</title>
+</head>
+<body>
+    <script type="text/javascript">
+      // 普通对象
+      const user = {
+        name: '江明东',
+        age: 18,
+      }
+
+      // 批量声明name age，同时将对象属性值江明东和18 依次赋值给变量name和age
+      // const {name, age} = user;
+      // console.log(name);
+      // console.log(age);
+
+      // 数组对象解构
+      const pig = [{
+        name: '佩奇',
+        age: 5
+      }]
+
+      let [{name:username, age}] = pig;
+      console.log(username);
+      console.log(age);
+
+    </script>
+</body>
+</html>

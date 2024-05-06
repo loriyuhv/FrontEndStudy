@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+<body>
+    <script type="text/javascript">
+      // 人类
+      function Person() {
+        this.head = 1;
+        this.eyes = 2;
+        this.legs = 3;
+
+        this.say = function() {};
+        this.eat = function() {};
+      }
+
+      // 男人
+      function Man() {
+
+      }
+      // 把公共的属性和方法给原型，这样就可以共享了。
+      Man.prototype = new Person();
+      // 注意：让原型里面的constructor重新指回Man
+      Man.prototype.constructor = Man;
+      Man.prototype.smoking = function() {};
+      const jerry = new Man();
+      console.log(jerry);
+
+      // 女人
+      function Woman() {
+        this.baby = function() {};
+      }
+      Woman.prototype = new Person();
+      Woman.prototype.constructor = Woman;
+      const alice = new Woman();
+      console.log(alice);
+
+      console.log(alice instanceof Object);
+
+      
+    </script>
+</body>
+</html>

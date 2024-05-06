@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组常见实例方法</title>
+</head>
+<body>
+    <script type="text/javascript">
+        const arr = new Array(1, 3, 6, 4, 8);
+        // 1. forEach 遍历数组
+        // arr.forEach((element, index) => {
+        //   console.log(`${index}\t${element}\t`);
+        // })
+
+        // 2. filter 过滤数组，并生成新数组
+        // const newArr = arr.filter((element) => {
+        //   return element > 4;
+        // })
+
+        // newArr.forEach(function(element) {
+        //   console.log(element);
+        // })
+
+        // 3. map 迭代数组 返回新数组，新数组里面的元素是处理之后的值，经常用于处理数据
+        // const newArr = arr.map((element) => {
+        //   return element >= 4 ? element * 3 : null;
+        // })
+
+        // const newArr = arr.filter((element) => {
+        //   return element >= 4;
+        // }).map((element) => {
+        //   return element * 3;
+        // })
+
+        // console.log(newArr);
+        // newArr.forEach((element) => {
+        //   console.log(element);
+        // })
+
+        // 4. reduce 累计器 返回函数累计处理的结果，经常用于求和等
+        let sum = arr.reduce((accumulator, currentValue) => {
+          return accumulator + currentValue;
+        }, 0);
+        console.log(sum);
+    </script>
+</body>
+</html>

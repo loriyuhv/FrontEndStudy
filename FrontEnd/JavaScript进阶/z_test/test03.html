@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test01</title>
+</head>
+<body>
+    <script type="text/javascript">
+      /**
+       * 1：写一个Goods构造函数
+       * 2：里面包含属性 name 商品名称 price 价格 count 库存数量
+       * 3：实例化多个商品对象，并打印到控制台，例如
+       *    小米 1999 20
+       *    华为 3999 59
+       *    vivo 1888 100
+      */
+      function Goods(name, price, count) {
+        this.name = name;
+        this.price = price;
+        this.count = count;
+      }
+
+      const mi = new Goods('小米', 1999, 20);
+      const huawei = new Goods('华为', 3999, 40);
+      const vivo = new Goods('vivo', 1888, 30);
+
+      console.log(`名称\t价格\t数量`);
+      console.log(`${mi.name}\t${mi.price}\t${mi.count}`);
+      console.log(`${huawei.name}\t${huawei.price}\t${huawei.count}`);
+      console.log(`${vivo.name}\t${vivo.price}\t${vivo.count}`);
+    </script>
+</body>
+</html>

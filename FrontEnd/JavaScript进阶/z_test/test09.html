@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数</title>
+</head>
+<body>
+    <script type="text/javascript">
+      // function Star(name, age) {
+      //   this.name = name;
+      //   this.age = age;
+
+      //   this.sing = function() {
+      //     console.log('I can sing.');
+      //   }
+      // }
+
+      // const jerry = new Star('Jerry', 18);
+      // const tom = new Star('Tom', 18);
+      // console.log(jerry.sing === tom.sing);
+      /**
+       * 构造函数 通过 原型 分配的函数 是所有对象 共享的。
+       * JavaScript规定，每一个构造函数都有一个prototype属性，指向另一个对象，所以，
+       *   我们也称之为原型对象。
+       * 这个对象可以挂载函数，对象实例化不会多次创建原型上的函数，节约内存。
+       * 我们可以把那些不变的内存，直接定义在prototype对象上，这样所有对象的实例就可以
+       *  共享这些方法。
+       * 构造函数和原型对象中的this都指向实例化对象。
+       **/
+
+      function Star(name, age, book) {
+        this.name = name;
+        this.age = age;
+        this.book = book;
+      }
+      
+      const jerry = new Star('Jerry', 18, 
+        {bookName: 'Nothing is impossible', bookPrice: 68.88}
+      );
+
+      console.log(jerry);
+
+      // const tom = jerry.prototype.Star('Tom', 21, {bookName: 'This is in China', price: 128.88});
+      // const tom = new jerry.Star('Tom', 21, {bookName: 'This is in China', price: 128.88});
+      // jerry.Star()
+      // console.log(tom);
+
+    </script>
+</body>
+</html>
