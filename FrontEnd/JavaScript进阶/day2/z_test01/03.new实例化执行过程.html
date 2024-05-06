@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test01</title>
+</head>
+<body>
+    <script type="text/javascript">
+      function Star(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      const jerry = new Star('Jerry', 18);
+
+      // 实例化执行过程
+      // 1. 创建新对象
+      // 类似基础代码
+      // {
+      //   name: undefined,
+      //   age: undefined
+      // }
+
+      // 2. 构造函数this指向新对象
+      // 类似代码
+      // this = {
+      //   name: undefined,
+      //   age: undefined,
+      // }
+
+      // 3. 执行构造函数代码，修改this，添加新的属性
+      // this就是代指tom，类似基础
+      // this.name = 'Tom';  (tom.name = 'Tom';)
+      // this.age = 18;  (tom.age = 18;)
+
+      // 4. 返回新对象
+      // 赋值给tom，类似基础
+      // const tom = {
+      //   name: 'Tom',
+      //   age: 18
+      // }
+      
+    </script>
+</body>
+</html>

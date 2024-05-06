@@ -8,15 +8,34 @@
     <script type="text/javascript">
         function Star(){}
 
-        let ldh = new Star()
+        const ldh = new Star()
+        Star.prototype.sing = function() {
+            console.log('sing!')
+        }
+
         // 对象原型__proto__指向构造函数的原型对象
+        // console.log(ldh)
         // console.log(ldh.__proto__)
         // console.log(ldh.__proto__ === Star.prototype)
 
+        /**
+         * 注意:
+         * __proto__是JS非标准属性。
+         * [[prototype]]和__proto__意义相同
+         * 用来表明当前实例对象指向哪个原型对象prototype
+         * __proto__对象里面也有一个constructor属性，指向创建该实例对象的构造函数
+         * 注意：__proto__是只读的。
+        **/
+
         // 对象原型里面有constructor 指向 构造函数 Star
         // console.log(ldh.__proto__.constructor === Star)
-        // let jerry = new ldh.__proto__.constructor()
+        let jerry = new ldh.__proto__.constructor()
+        // jerry.sing()
         // console.log(jerry === ldh)
+
+        console.log(Star === ldh.__proto__.constructor);
+        console.log(Star.prototype.constructor === Star);
+        console.log(Star.prototype.constructor === ldh.__proto__.constructor);
     </script>
 </body>
 </html>

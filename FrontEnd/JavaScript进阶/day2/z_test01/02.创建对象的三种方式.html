@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建对象的三种方式</title>
+</head>
+<body>
+    <script type="text/javascript">
+      // 1. 利用对象字面量创建对象
+      // const student = {
+      //   name: 'Jerry'
+      // }
+
+      // 2. 利用new Object创建对象
+      const student = new Object({name: 'Jerry'})
+      console.log(student);
+      student.sing = function() {
+        console.log(this);
+      }
+      student.sing()
+    </script>
+</body>
+</html>
