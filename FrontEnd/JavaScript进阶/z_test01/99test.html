@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test01</title>
+</head>
+<body>
+    
+      <form action="">
+        <div onclick="handle(event, username)" id="div1">
+          用户名：<input type="text" name="username" value="loriyuhv" disabled/>
+        </div>
+        
+      </form>
+    <script type="text/javascript">
+      function handle(event, username) {
+        console.log(username);
+      }
+
+      const div1 = document.querySelector('#div1');
+      div1.addEventListener('click', handle)
+
+    </script>
+</body>
+</html>
