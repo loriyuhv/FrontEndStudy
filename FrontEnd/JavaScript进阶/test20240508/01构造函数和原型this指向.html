@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test01</title>
+</head>
+<body>
+    <script type="text/javascript">
+      function Star(name) {
+        this.name = name
+        this.sing = function () {
+          console.log(this)
+          console.log('sing!')
+        }
+        this.dance = () => {
+          console.log(this)
+          console.log('dance')
+        }
+      }
+
+      Star.prototype.swimming = () => {
+        console.log(this);
+        console.log('swimming!')
+      }
+
+      // console.log(Star.prototype)
+
+      const ldh = new Star('ldh')
+      console.log(ldh)
+      // ldh.sing()
+      // ldh.dance()
+      ldh.swimming()
+
+
+
+      const jerry = new Object();
+      jerry.name = 'Jerry'
+      jerry.sing = () => {
+        console.log(this)
+        console.log('sing!')
+      }
+      Object.prototype.age = 18
+      Object.prototype.dance = () => {
+        console.log(this)
+        console.log('dance!')
+      }
+      // console.log(jerry)
+      // console.log(jerry.name)
+      // console.log(jerry.age)
+      // jerry.sing()
+      // jerry.dance()
+
+    </script>
+</body>
+</html>
