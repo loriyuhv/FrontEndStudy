@@ -59,6 +59,12 @@
             <h2>北京</h2>
         </template>
 
+        <template>
+          <div v-if="flag">
+            <h2>Hello Spring</h2>
+          </div>
+        </template>
+
     </div>
 
     <script>
@@ -66,7 +72,8 @@
             el: '#root',
             data: {
                 name: "落日余晖",
-                n: 0
+                n: 0,
+                flag: 'change'
             }
         })
     </script>
