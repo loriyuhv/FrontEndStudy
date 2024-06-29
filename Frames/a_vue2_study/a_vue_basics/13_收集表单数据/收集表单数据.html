@@ -21,7 +21,12 @@
         trim：输入首尾空格过滤
     -->
     <div id="demo">
-        <form @submit.prevent="hello">
+        <!-- 
+            form中的action一般是表单提交后携带数据跳转到目标网页。
+            但实际开发中，form只是作为一个元素的呈现，一个数据解构。
+                我们借助ajax发送数据到后端，好处是页面无刷新。
+         -->
+        <form @submit.prevent="hello"> 
             <label>账号：<input type="text" name="account" v-model.trim="userInfo.account"></label><br/><br/>
             <label>密码：<input type="password" name="pwd" v-model="userInfo.pwd"></label><br/><br/>
             <label>年龄：<input type="number" name="pwd" v-model.number="userInfo.age"></label><br/><br/>

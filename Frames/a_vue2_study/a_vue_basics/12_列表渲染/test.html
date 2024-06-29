@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>key的原理</title>
+  <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+  <!-- 准备好一个容器 -->
+  <div id="root">
+    <!-- 遍历数组 -->
+    <h2>人员列表</h2>
+    <button @click="sortType=2">年龄升序</button>
+    <button @click="sortType=1">年龄降序</button>
+    <button @click="sortType=0">原顺序</button><br>
+    <input type="text" placeholder="请输入名字" v-model:value="keyWord">
+    <ul>
+      <li v-for="(person, index) in filterPeople" :key="person.id">
+        {{person.name}}-{{person.age}}-{{person.sex}}
+      </li>
+    </ul>
+  </div>
+</body>
+<script type="text/javascript">
+  Vue.config.productionTip = false;
+  
+  // 用watch实现
+  /*
+  new Vue({
+    el: '#root',
+    data: {
+      keyWord: '',
+      people: [
+        {id: '001', name: 'Jerry', age: 18},
+        {id: '002', name: 'Marry', age: 18},
+        {id: '003', name: 'Tom', age: 21},
+      ],
+      filterPeople: [],
+    },
+    watch: {
+      keyWord: {
+        immediate: true,
+        handler(value) {
+          this.filterPeople = this.people.filter(person => {
+            console.log(person.name.indexOf(value));
+            return person.name.indexOf(value) !== -1
+          })
+        }
+      }
+    },
+    methods: {
+      add() {
+        const p = {id: '004', name: 'Edward', age: 40}
+        this.people.unshift(p)
+      },
+      deletePerson() {
+        this.people.pop()
+        // this.people.shift()
+      }
+    }
+  })
+  */
+
+  new Vue({
+    el: '#root',
+    data: {
+      keyWord: '',
+      sortType: 0, // 0
+      people: [
+        {id: '001', name: 'Jerry', age: 18, sex: 'male'},
+        {id: '002', name: 'Marry', age: 32, sex: 'female'},
+        {id: '003', name: 'Tom', age: 21, sex: 'male'},
+      ],
+    },
+    computed: {
+      filterPeople() {
+        const arr = this.people.filter(person => {
+          return person.name.indexOf(this.keyWord) !== -1
+        })
+        if(this.sortType) {
+          arr.sort((a, b) => {
+            return this.sortType !== 1 ? a.age - b.age : b.age - a.age
+          })
+        }
+        return arr
+      }
+    }
+  })
+</script>
+</html>

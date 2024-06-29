@@ -9,7 +9,8 @@
 
 <script>
   // 组件交互相关的代码（数据、方法等等）
-  export default {
+  // export const student { // 导出方式一：命名导出 写法一（分别暴露） import {???} from ???
+  export default { // 导出方式二：默认导出 写法二 import ??? from ???
     name: 'Student',
     data(){
       return {
@@ -23,6 +24,6 @@
       }
     }
   }
-
-  // export default school
+  // export {school} // 导出方式一：命名导出 写法二 （统一暴露）
+  // export default school // 导出方式二：默认导出 写法一
 </script>

@@ -25,11 +25,11 @@
         <h3>现在是：{{getFormatTime()}}</h3>
 
         <!-- 过滤器实现 -->
-        <h3>现在是：{{time | timeFormater}} </h3>
+        <h3>现在是：{{time | timeFormat}} </h3>
         <!-- 过滤器实现 (传参)-->
-        <h3>现在是：{{time | timeFormater('YYYY_MM_DD')}} </h3>
+        <h3>现在是：{{time | timeFormat('YYYY_MM_DD')}} </h3>
 
-        <h3>现在是：{{time | timeFormater('YYYY_MM_DD') | mySlice}} </h3>
+        <h3>现在是：{{time | timeFormat('YYYY_MM_DD') | mySlice}} </h3>
         <h3 :x="msg | mySlice">落日余晖</h3>
         
     </div>
@@ -62,7 +62,7 @@
             },
             // 局部过滤器
             filters: {
-                timeFormater(value, str='YYYY-MM-DD HH:mm:ss') {
+                timeFormat(value, str='YYYY-MM-DD HH:mm:ss') {
                     // console.log('@',value);
                     return dayjs(value).format(str)
                 },
