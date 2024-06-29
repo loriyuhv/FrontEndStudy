@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>随机更换背景图片</title>
+  <style>
+    body {
+      background: url(./images/desktop_1.jpg) no-repeat top center/cover;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // 获取随机数
+    function getRandom(N, M) {
+      return Math.floor(Math.random() * (M - N + 1)) + N
+    }
+    // 随机更换背景图片
+    function getPicture() {
+      const random = getRandom(1, 10)
+      document.body.style.background = `url(./images/desktop_${random}.jpg) no-repeat top center/cover`
+    }
+
+    setInterval(() => {
+      getPicture()
+    }, 3000);
+  </script>
+</body>
+</html>

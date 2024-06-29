@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>通过类名修改样式</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .nav {
+      color: rgb(87, 40, 35);
+    }
+
+    .content {
+      width: 300px;
+      height: 300px;
+      margin: 10px auto;
+      padding: 10px;
+      border: 1px solid salmon;
+      background-color: rgb(163, 212, 196);
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">我要去远方！！！</div>
+  <script>
+    // 1. 获取元素
+    const div = document.querySelector('div')
+    // 2. 添加类名
+    div.className = 'nav content'
+  </script>
+</body>
+</html>

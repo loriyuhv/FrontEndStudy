@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>随机抽奖案例</title>
-    <script type="text/javascript">
-      
-    </script>
     <style>
       .wrapper1{
         width: 840px;
@@ -18,14 +15,15 @@
 </head>
 <body>
     <div class="wrapper1">
-      <strong>年度总结兼抽奖</strong>
+      <strong>年度总结暨抽奖</strong>
       <h1>一等奖：<span id="one">???</span></h1>
-      <h1>二等奖：<span id="two">???</span></h1>
-      <h1>三等奖：<span id="three">???</span></h1>
+      <h3>二等奖：<span id="two">???</span></h3>
+      <h5>三等奖：<span id="three">???</span></h5>
     </div>
     <script>
       // 1. 声明数组
       const persons = ['周杰伦', '刘德华', '周星驰', '王师维', '张学友'];
+      
       // 2. 先做一等奖
       // 2.1 随机数 数组的下标
       let random = Math.floor(Math.random() * persons.length);
@@ -38,7 +36,7 @@
       persons.splice(random, 1);
       console.log(persons);
 
-      // 3. 三等奖
+      // 3. 二等奖
       // 3.1 获取数组下标（随机数）
       random = Math.floor(Math.random() * persons.length);
       // 3.2 更改dom元素two

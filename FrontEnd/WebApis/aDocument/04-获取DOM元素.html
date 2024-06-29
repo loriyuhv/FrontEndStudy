@@ -9,10 +9,10 @@
     <p>从整个 DOM 树中查找 DOM 节点是学习 DOM 的第一个步骤。</p>
     <p>我要去远方</p>
     <ul>
-        <li>元素1</li>
-        <li>元素2</li>
-        <li>元素3</li>
-        <li>元素4</li>
+        <li>江西省</li>
+        <li>湖北省</li>
+        <li>江苏省</li>
+        <li>江南省</li>
     </ul>
 
     <div id="#container">
@@ -28,18 +28,37 @@
     </div>
 
     <script type="text/javascript">
-        /**
-         * 1. querySelector   满足条件的第一个元素
-         * 2. querySelectorAll  满足条件的元素集合 返回伪数组
+        /** 根据CSS选择器来获取多个DOM元素
+         *  1. querySelector   满足条件的第一个元素
+         *  2. querySelectorAll  满足条件的元素集合 返回伪数组
          */
         // 1.获取第一个p元素
         // let p = document.querySelector('p')
         // console.log(p)
+
         // 2.获取第一个li元素
         // let li = document.querySelector('li')
         // console.log(li)
-
-        // 其他获取元素的方式
+        
+        // # 3. 获取满足条件的li元素集合
+        // 返回的是一个伪数组，没有pop()、push()等数组方法
+        // const lis = document.querySelectorAll('ul li') 
+        // console.log(lis);
+        // lis.forEach((li, index) => {
+        //     if (index % 2) {
+        //         li.style.color = 'red'
+        //         li.style.fontWeight = 'bolder'
+        //     } else {
+        //         li.style.color = 'pink'
+        //     }
+        // })
+    
+        /** 其他获取元素的方式
+         *  1. getElementById() 根据元素id获取第一个元素
+         *  2. getElementByTagName() 根据标签获取满足条件的tag元素
+         *  3. getElementByClassName() 根据类名获取满足条件的element元素
+         * */
+        // 
         // 1. 根据id获取第一个元素
         // const element = document.getElementById('element');
         // element.outerHTML = '<h1>Hello World!!!</h1>'
@@ -50,8 +69,8 @@
         // console.log(div);
         
         // 3. 根据类名获取元素 获取页面 所有类名为w的
-        const w = document.getElementsByClassName('w');
-        console.log(w);
+        // const w = document.getElementsByClassName('w');
+        // console.log(w);
     </script>
 </body>
 </html>

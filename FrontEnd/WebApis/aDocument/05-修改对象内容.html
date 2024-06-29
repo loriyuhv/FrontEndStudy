@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>修改对象内容</title>
+</head>
+<body>
+  <div class="content">Hello world!</div>
+  <script>
+    // 1. 获取元素
+    const content = document.querySelector('.content')
+    // 2. 修改文字内容 对象.innerText 属性
+    console.log(content.innerText) // 获取文字内容
+    content.innerText = '<strong>你好，世界！</strong>' // 修改文字内容 （不解析标签）
+    content.innerHTML = '<h2>你好，世界！</h2>' // 修改文字内容（解析标签）
+  </script>
+</body>
+</html>
