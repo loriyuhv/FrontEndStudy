@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>通过classList修改样式</title>
+  <style>
+    .content {
+      width: 200px;
+      height: 200px;
+      color: #ea7284;
+    }
+
+    .active {
+      color: #1c5058;
+      background-color: azure;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">我要去远方！！！</div>
+  <script>
+    // 通过classList添加
+    // 1. 获取元素
+    const content = document.querySelector('.content')
+    // 2. 修改样式 
+    // 2.1 追加类 add() 类名不加点，并且是字符串
+    // content.classList.add('active')
+    // 2.2 删除类 remove()
+    // content.classList.remove('content')
+    // 2.3 切换类 toggle 有：删除 没有：增加
+    // content.classList.toggle('active') // 有：增加
+    content.classList.toggle('content') // 没有：删除
+    // 
+  </script>
+</body>
+</html>
