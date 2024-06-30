@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>操作表单元素属性</title>
+  <style>
+    input {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <label for="username">用户名称：</label>
+  <input type="text" id="username" placeholder="请输入用户名称"><br>
+  <label for="hobbies">用户爱好：</label>
+  <input type="checkbox" id="hobbies" class="hobbies"> 吃饭
+  <input type="checkbox" id="hobbies" class="hobbies"> 阅读
+  <input type="checkbox" id="hobbies" class="hobbies"> 早睡 <br>
+  <button>提交</button>
+  <script>
+    /** 用户名称input元素 类型：text */
+    // 1. 获取元素
+    // const username = document.querySelector('input')
+    // 2. 获取值 获取表单里面的值 用的 表单.value
+    // console.log(username.value)
+    // console.log(username.innerHTML) // innerHtml 得不到表单的内容
+    // 3. 设置表单的值
+    // username.value = 'Jerry'
+    // 4. 设置表单的类型
+    // console.log(username.type);
+    // username.type = 'password'
+    
+    /** 用户爱好input元素 类型：checkbox */
+    // 1. 获取元素
+    // const hobbies = document.querySelectorAll('.hobbies')
+    // console.log(hobbies[0].checked);
+    // console.log(hobbies[1].checked);
+    // console.log(hobbies[2].checked);
+    // 2. 修改元素的checked
+    // hobbies[1].checked = true // checked 只接受布尔值
+    // hobbies[2].checked = 'true' // 会选中，不提倡 有隐式转换
+    
+    /** 提交按钮 */
+    // 1. 获取元素
+    const button = document.querySelector('button')
+    // 2. 设置按钮禁用状态
+    button.disabled = true    
+  </script>
+</body>
+</html>

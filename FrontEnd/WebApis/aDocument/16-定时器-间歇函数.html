@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>16-定时器-间歇函数</title>
+</head>
+<body>
+  <strong>倒计时：</strong><span>60</span>
+  <script>
+    // setInterval(函数，间歇函数)
+    let timer = setInterval(function () {
+      const span = document.querySelector('span')
+      const number = parseInt(span.innerText)
+      
+      if (number <= 0) {
+        clearInterval(timer) // 关闭定时器
+      } else {
+        span.innerText = number - 1
+      }
+    }, 1000) // 开启定时器
+  </script>
+</body>
+</html>

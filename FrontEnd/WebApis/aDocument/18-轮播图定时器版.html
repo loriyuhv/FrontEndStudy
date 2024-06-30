@@ -84,9 +84,9 @@
       <img src="./images/slider01.jpg" alt="">
     </div>
     <div class="slider-footer">
-      <p>我要去远方！！！</p>
+      <p>对人类来说会不会太超前了？</p>
       <ul class="slider-indicator">
-        <li></li>
+        <li class="active"></li>
         <li></li>
         <li></li>
         <li></li>
@@ -113,32 +113,40 @@
       { url: './images/slider07.jpg', title: '一站式解决你的电脑配置问题！！！', color: 'rgb(53, 29, 25)' },
       { url: './images/slider08.jpg', title: '谁不想和小猫咪贴贴呢！', color: 'rgb(99, 72, 114)' },
     ]
-    // 2. 随机选择一个数字，选出数组对应的对象，更换图片，底部盒子背景颜色，以及文字内容
-    // 2.1 随机数
-    // const random = Math.floor(Math.random() * 8)
-    const random = parseInt(Math.random() * 8)
-    // 2.2 获取目标对象
-    const target = sliderData[random]
-    // 2.3 更换图片
-    // 2.3.1 获取图片
-    const img = document.querySelector('img')
-    // 2.3.1 更换图片url
-    img.src = target.url
-    // 2.4 更换底部盒子变更颜色
+    // 1. 获取元素
+    const img = document.querySelector('.slider-wrapper img')
+    const p = document.querySelector('.slider-footer p')
     const sliderFooter = document.querySelector('.slider-footer')
-    sliderFooter.style.backgroundColor = target.color
-    // 2.5文字内容
-    const p = document.querySelector('p')
-    p.innerText = target.title
-    // 3. 利用这个随机数字，让小圆点添加高亮的类(addClass)
-    // 方式一
-    // const lis = document.querySelectorAll('.slider-indicator li')
-    // lis[random].classList.add('active')
-    // lis[random].classList.toggle('active') // 不好，遇到有默认的，就会删除
-    // 方式二：伪类选择器
-    const li = document.querySelector(`.slider-indicator li:nth-child(${random + 1})`)
-    li.classList.add('active')
+    
+    // 2. 开启定时器
+    let i = 0
+    setInterval(() => {
+      i++
+      // 无缝衔接位置
+      if ( i >= sliderData.length) i = 0
+      // 更换图片路径
+      img.src = sliderData[i].url
+      // 更换p内容
+      p.innerText = sliderData[i].title
+      sliderFooter.style.backgroundColor = sliderData[i].color
+      // 小圆点
+      // 先删除以前的
+      document.querySelector('.slider-indicator .active').classList.remove('active')
+      // 只让当前li添加active
+      document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+
+      
+      
+      // if (i == 7) {
+      //   setTimeout(() => {
+      //     document.querySelector(`.slider-indicator li:nth-child(${i+1})`).classList.remove('active')
+      //     i = 0
+      //     document.querySelector(`.slider-indicator li:nth-child(${i+1})`).classList.add('active')
+      //   }, 900)
+      //   i == 0
+      // }
+    }, 1000);
+      
   </script>
-  
 </body>
 </html>
