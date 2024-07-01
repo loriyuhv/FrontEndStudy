@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>事件监听版本</title>
+  <style>
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <span>今天天气：</span><strong></strong><br>
+    <button>天气</button>
+  </div>
+  <script>
+    // 天气数据
+    const weather = [
+      {name: '晴朗', color: 'red'}, 
+      {name: '多云', color: 'pink'}, 
+      {name: '暴雨', color: 'blue'}, 
+      {name: '小雨', color: 'purple'}, 
+      {name: '阴天', color: 'gray'}
+    ]
+    // 1. 获取事件源
+    const button = document.querySelector('button')
+
+    /** DOM L0 事件源.on事件 = function() {} */
+    // button.onclick = function() {
+    //   const random = parseInt(Math.random() * weather.length)
+    //   const strong = document.querySelector('strong')
+    //   strong.innerText = weather[random].name
+    //   strong.style.color = weather[random].color
+    // }
+    /** DOM L2 事件源.addEventListener(事件, 事件处理函数) */
+    // 2. 事件监听
+    // button.addEventListener('click', function() {
+    //   const random = parseInt(Math.random() * weather.length)
+    //   const strong = document.querySelector('strong')
+    //   strong.innerText = weather[random].name
+    //   strong.style.color = weather[random].color
+    // })
+    // 区别
+    /** 
+     * on事件类型 on方式会被覆盖， addEventListener方式可以绑定多次，
+     *  拥有事件更多特性，推荐使用。
+     * */
+    button.onclick = function() {
+      alert('11')
+    }
+    button.onclick = function() {
+      alert('22')
+    }
+    // addEventListener
+    // button.addEventListener('click', function() {
+    //   alert('11')
+    // })
+    // button.addEventListener('click', function() {
+    //   alert('22')
+    // })
+  </script>
+</body>
+</html>

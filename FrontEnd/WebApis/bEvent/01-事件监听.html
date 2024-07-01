@@ -10,12 +10,28 @@
     <button id="btn">点击改变文字颜色</button>
 
     <script type="text/javascript">
+        /** 事件监听
+         * 什么是事件？
+         *  事件是在编程时系统内发生的动作或者发生的事情。
+         *  比如用户在网页上单击一个按钮。
+         * 什么是事件监听？
+         *  就是让程序检测是否有事件产生，一旦有事件触发，就立即调用一个函数做出响应，
+         *  也称为绑定事件或者注册事件
+         *  比如鼠标经过显示下拉菜单，比如点击可以播放轮播图等等。
+         * 
+         * 语法：
+         *  元素对象.addEventListener('事件类型', 要执行的函数)
+         * 事件监听三要素：
+         *  1）事件源：哪个dom元素被触发了，要获取dom元素
+         *  2）事件类型：用什么方式触发，比如鼠标单击click、鼠标经过mouseover等
+         *  3）事件调用函数：要做什么事
+         * */
+
         // 1. 获取 button 对应的 DOM 对象
         let btn = document.getElementById('btn');
 
         // 2. 添加事件监听
         btn.addEventListener('click', function(){
-            // console.log(this);
             console.log("等待事件触发");
             // 改变 p 标签的文字颜色
             let text = document.getElementById("text");

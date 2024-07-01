@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>随机点名案例</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    h2 {
+      text-align: center;
+    }
+    .box {
+      width: 350px;
+      margin: 50px auto;
+      display: flex;
+      font-size: 25px;
+      line-height: 40px;
+    }
+    .display-name {
+      width: 250px;
+      height: 40px;
+      color: red;
+    }
+    .buttons {
+      text-align: center;
+    }
+    .buttons button {
+      width: 120px;
+      height: 35px;
+      margin: 0 50px;
+    }
+  </style>
+</head>
+<body>
+  <h2>随机点名</h2>
+  <div class="box">
+    <span>名字是：</span>
+    <div class="display-name">这里显示姓名</div>
+  </div>
+  <div class="buttons">
+    <button class="start">开始</button>
+    <button class="end">结束</button>
+  </div>
+  <script>
+    // 数据数组
+    const names = ['王师维', '汪文', '鄢仁鸿', '江明东', '汪晓军', '刘云飞']
+    // 定时器全局变量
+    let timerId = 0
+    // 随机号全局变量
+    let random = 0
+    // 1. 获取事件源对象
+    // 1.1 获取开始按钮对象
+    const start = document.querySelector('.start')
+    // 2.1 获取结束按钮对象
+    const end = document.querySelector('.end')
+
+    // 业务1：开始按钮模块
+    const displayName = document.querySelector('.display-name')
+    // 1.2 添加点击事件
+    start.addEventListener('click', function() {
+      timerId = setInterval(function() {
+        // 随机数
+        random = parseInt(Math.random() * names.length)
+        displayName.innerHTML = names[random]
+      }, 64)
+      // 如果数组里面只有一个值，直接让两个按钮禁用
+      if (names.length == 1) {
+        start.disabled = end.disabled = true
+      }
+    })
+    // 业务2：结束按钮模块
+    end.addEventListener('click', function() {
+      clearInterval(timerId)
+      // 结束了，可以删除当前抽取掉的那个数组元素
+      names.splice(random, 1)
+    })
+  </script>
+</body>
+</html>
